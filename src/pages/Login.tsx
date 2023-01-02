@@ -1,7 +1,13 @@
 import LoginForm from "../components/LoginForm";
+import { useEffect } from "react";
 import "../styles/LoginPage.css";
 
 const LoginPage = (): JSX.Element => {
+
+  useEffect(() => {
+    document.title = "Login";
+  }, []);
+
   return (
     <div className="login_page_wrapper">
       <div className="logo">

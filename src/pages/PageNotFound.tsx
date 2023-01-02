@@ -1,7 +1,13 @@
 import { Link } from "react-router-dom";
 import "../styles/PageNotFound.css";
+import { useEffect } from "react";
 
 const PageNotFound = (): JSX.Element => {
+  
+  useEffect(() => {
+    document.title = "Not Found";
+  }, []);
+
   return (
     <div className="page_not_found">
       <img src="../assets/img/not-found.png" alt="Page not found Logo" />
