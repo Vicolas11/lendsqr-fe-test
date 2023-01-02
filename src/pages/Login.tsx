@@ -1,9 +1,9 @@
 import LoginForm from "../components/LoginForm";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "../styles/LoginPage.css";
 
 const LoginPage = (): JSX.Element => {
-
   useEffect(() => {
     document.title = "Login";
   }, []);
@@ -11,7 +11,9 @@ const LoginPage = (): JSX.Element => {
   return (
     <div className="login_page_wrapper">
       <div className="logo">
-        <img src="../assets/svg/logo.svg" alt="Logo" />
+        <Link to={"/login"}>
+          <img src="../assets/svg/logo.svg" alt="Logo" />
+        </Link>
       </div>
       <div className="main_wrapper">
         <div className="svg_wrapper">
