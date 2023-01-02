@@ -17,7 +17,8 @@
 }
 
 .page_not_found button {
-  @apply bg-[#213F7D] text-[#FBFBFB];
+  @apply bg-[#39cdcc] text-[#FBFBFB];
   @apply py-2 px-6 rounded-md;
-  @apply hover:bg-[#9EC1E6];
+  @apply hover:bg-[#2a9b9b];
+  @apply tracking-widest font-semibold;
 }
