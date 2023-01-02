@@ -1,7 +1,8 @@
 :root {
-  --textColor1: #213f7d;
-  --textColor2: #39cdcc;
-  --textColor3: #2a9b9b;
+  --color1: #213f7d;
+  --color2: #39cdcc;
+  --color3: #2a9b9b;
+  --color4: #d93025;
 }
 
 .login_page_wrapper .logo {
@@ -40,8 +41,8 @@
 }
 
 .welcome h1 {
-  @apply font-[AvenirBold] text-[35px] md:text-[40px] leading-[55px] ;
-  @apply text-[color:var(--textColor1)] font-bold;
+  @apply font-[AvenirBold] text-[35px] md:text-[40px] leading-[55px];
+  @apply text-[color:var(--color1)] font-bold;
   letter-spacing: -0.04em;
 }
 
@@ -55,16 +56,27 @@
   @apply font-[AvenirRegular];
 }
 
-.login_form input {
+.inputStyle {
   @apply px-4 w-full h-[50px];
-  @apply bg-white border-2 border-[#545f7d26];
+  @apply border-2 border-[#545f7d26];
   @apply rounded-[5px] focus:border-2 active:border-2;
-  @apply focus:border-[color:var(--textColor2)];
-  @apply active:border-[color:var(--textColor2)];
-  @apply focus:outline-[color:var(--textColor2)];
-  @apply active:outline-[color:var(--textColor2)];
+  @apply focus:border-[color:var(--color2)];
+  @apply active:border-[color:var(--color2)];
+  @apply focus:outline-[color:var(--color2)];
+  @apply active:outline-[color:var(--color2)];
 }
 
+.errorInputStyle {
+  @apply px-4 w-full h-[50px];
+  @apply border-2 rounded-[5px];
+  @apply border-[color:var(--color4)];
+  @apply focus:border-[color:var(--color4)];
+  @apply active:border-[color:var(--color4)];
+  @apply focus:outline-[color:var(--color4)];
+  @apply active:outline-[color:var(--color4)];
+}
+
+.email_input_wrapper,
 .password_input_wrapper {
   @apply relative;
 }
@@ -72,20 +84,25 @@
 .password_input_wrapper label {
   @apply absolute right-4 top-1/2 translate-y-[-50%];
   @apply font-semibold text-xs text-center;
-  @apply text-[color:var(--textColor2)] cursor-pointer;
-  @apply hover:text-[color:var(--textColor3)];
+  @apply text-[color:var(--color2)] cursor-pointer;
+  @apply hover:text-[color:var(--color3)];
+}
+
+.errMsg {
+  @apply absolute text-[color:var(--color4)] text-sm p-1;
+  @apply top-[2.9rem];
 }
 
 .forgetPassword {
-  @apply font-bold text-[color:var(--textColor2)] text-xs;
+  @apply font-bold text-[color:var(--color2)] text-xs;
   @apply hover:underline-offset-4 hover:underline pb-2;
-  @apply hover:text-[color:var(--textColor3)] w-fit;
+  @apply hover:text-[color:var(--color3)] w-fit;
   @apply tracking-widest;
 }
 
 .login_form button {
-  @apply bg-[color:var(--textColor2)] text-white text-sm;
+  @apply bg-[color:var(--color2)] text-white text-sm;
   @apply w-full py-4 px-6 rounded-lg transition-colors;
-  @apply hover:bg-[color:var(--textColor3)] font-semibold;
+  @apply hover:bg-[color:var(--color3)] font-semibold;
   @apply tracking-widest;
 }
