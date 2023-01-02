@@ -4,12 +4,12 @@
   --textColor3: #2a9b9b;
 }
 
-login_page_wrapper .logo {
-  @apply w-full max-w-[173.76px] h-auto;
+.login_page_wrapper .logo {
+  @apply absolute top-[3%] lg:top-[10%] left-[5%] z-20;
 }
 
-login_page_wrapper .logo {
-  @apply w-full max-w-[173.76px] h-auto;
+.login_page_wrapper .logo img {
+  @apply w-9/12 lg:w-full max-w-[173.76px] h-auto;
 }
 
 .main_wrapper {
@@ -23,7 +23,7 @@ login_page_wrapper .logo {
 }
 
 .svg_wrapper img {
-  @apply w-full max-w-[600px] h-auto;
+  @apply w-9/12 lg:w-full max-w-[600px] h-auto;
 }
 
 .login_form_wrapper {
@@ -32,7 +32,7 @@ login_page_wrapper .logo {
 }
 
 .login_form_wrapper .inner_wrapper {
-  @apply w-full lg:w-9/12;
+  @apply w-full lg:w-9/12 p-3;
 }
 
 .welcome {
@@ -40,8 +40,8 @@ login_page_wrapper .logo {
 }
 
 .welcome h1 {
-  @apply font-[AvenirBold] text-[40px] leading-[55px] font-bold;
-  @apply text-[color:var(--textColor1)];
+  @apply font-[AvenirBold] text-[35px] md:text-[40px] leading-[55px] ;
+  @apply text-[color:var(--textColor1)] font-bold;
   letter-spacing: -0.04em;
 }
 
