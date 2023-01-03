@@ -1,0 +1,93 @@
+:root {
+  --color1: #213f7d;
+  --color2: #39cdcc;
+}
+/* ************************************************************ */
+/* ******************** DashHEADER Component ****************** */
+/* ************************************************************ */
+.dash_header_wrapper {
+  @apply absolute top-0 left-0 w-screen m-0;
+  @apply flex flex-row justify-between px-4 md:px-8 py-4 md:py-6 shadow-md;
+}
+
+.dash_header_wrapper .left_wrapper {
+  @apply flex justify-between  items-center md:space-x-3;
+  @apply w-full lg:w-1/2 ;
+}
+
+.hamburger {
+  @apply inline-flex p-3 rounded lg:hidden text-[color:var(--color2)] ml-auto;
+  @apply hover:text-[#3b3f47] outline-none overflow-y-auto;
+  @apply absolute top-1/2 left-0 translate-y-[-50%] md:hidden z-10;
+}
+
+.dash_header_wrapper .left_wrapper .logo img {
+  @apply w-full max-w-[144.8px] h-auto;
+}
+
+.dash_header_wrapper .right_wrapper {
+  @apply flex flex-row sm:w-8/12 md:w-1/2 justify-end items-center;
+  @apply ml-2 sm:space-x-4 md:space-x-6 md:pr-0;
+  @apply text-[color:var(--color1)];
+}
+
+.left_wrapper .logo {
+  @apply hidden md:block w-0 md:w-[60%] lg:w-[40%];
+  @apply cursor-pointer;
+}
+
+.search_wrapper {
+  @apply relative flex flex-row justify-center items-center w-full lg:w-[60%];
+}
+
+.search_wrapper input {
+  @apply border-2 border-[#545f7d26];
+  @apply h-[50px] md:h-[40px] w-full px-4 mr-[-.5rem];
+  @apply rounded-br-none rounded-tr-none;
+  @apply rounded-bl-lg rounded-tl-lg pl-12 md:pl-4;
+  @apply focus:border-2 focus:border-[color:var(--color2)];
+  @apply focus:outline-2 focus:outline-[color:var(--color2)];
+  @apply placeholder:text-sm;
+}
+
+.search_wrapper div {
+  @apply bg-[color:var(--color2)];
+  @apply h-[50px] md:h-[40px] px-4;
+  @apply flex md:justify-start cursor-pointer;
+  @apply rounded-br-lg rounded-tr-lg;
+}
+
+.search_wrapper div img {
+  @apply w-full max-w-[15px] h-auto;
+}
+
+.right_wrapper .docs h1 {
+  @apply underline underline-offset-4 font-normal text-[16px];
+  @apply hidden sm:block font-roboto cursor-pointer;
+}
+
+.right_wrapper .bell {
+  @apply hidden sm:block cursor-pointer;
+}
+
+.right_wrapper .bell img {
+  @apply  w-full max-w-[19.67px] h-auto;
+}
+
+.right_wrapper .avatar {
+  @apply flex flex-row justify-evenly items-center;
+  @apply sm:mr-2 space-x-2 cursor-pointer;
+}
+
+.right_wrapper .avatar img {
+  @apply w-11/12 md:w-full max-w-[48px] h-auto;
+}
+
+.avatar .profile_name {
+  @apply hidden sm:flex flex-row justify-evenly items-center;
+  @apply space-x-1 font-medium;
+}
+
+.avatar .profile_name img {
+  @apply w-full max-w-[12px] h-auto;
+}
