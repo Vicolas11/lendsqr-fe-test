@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import "../styles/LoginPage.css";
 
 const LoginPage = (): JSX.Element => {
+  
   useEffect(() => {
     document.title = "Login";
   }, []);
