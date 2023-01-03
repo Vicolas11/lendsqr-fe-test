@@ -1,7 +1,11 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { PersistGate } from "redux-persist/integration/react";
+import store, { persistor } from "./store/store";
 import reportWebVitals from "./reportWebVitals";
 import PageNotFound from "./pages/PageNotFound";
+import Dashboard from "./pages/Dashboard";
 import ReactDOM from "react-dom/client";
+import { Provider } from "react-redux";
 import LoginPage from "./pages/Login";
 import "./styles/index.css";
 import React from "react";
@@ -12,9 +16,13 @@ const router = createBrowserRouter([
     element: <PageNotFound />,
   },
   {
-    path: "/login",
+    path: "/",
     element: <LoginPage />,
-  }
+  },
+  {
+    path: "/dashboard",
+    element: <Dashboard />,
+  },
 ]);
 
 const root = ReactDOM.createRoot(
@@ -22,7 +30,11 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <RouterProvider router={router} />
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 
