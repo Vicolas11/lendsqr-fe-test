@@ -1,7 +1,11 @@
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { useAppDispatch } from "../hooks/store.hook";
+import { showLogoutModal } from "../store/slice/global.slice";
 
 const DashHeader = (): JSX.Element => {
+  const dispatch = useAppDispatch();
+
   return (
     <header className="dash_header_wrapper">
       <div className="left_wrapper">
@@ -28,6 +32,14 @@ const DashHeader = (): JSX.Element => {
         <span className="bell">
           <img src="../assets/svg/bell.svg" alt="Bell" />
         </span>
+        {/* Mobile Screen */}
+        <span
+          className="mobile_avatar"
+          onClick={() => dispatch(showLogoutModal())}
+        >
+          <img src={"../assets/img/avatar.png"} alt="avatar" />
+        </span>
+        {/* Larger Screen */}
         <span className="avatar">
           <img src={"../assets/img/avatar.png"} alt="avatar" />
           <div className="profile_name">
