@@ -37,7 +37,7 @@ const LoginForm = (): JSX.Element => {
   const onSubmitHandler = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     const { email, password } = textInput;
-    console.log("status => ", showErrMsg);
+    
     // Validate for empty inputs
     if (email.length <= 0 && password.length <= 0) {
       setShowErrMsg({ email: true, password: true });
