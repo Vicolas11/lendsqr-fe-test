@@ -1,22 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;1,100;1,200;1,300;1,400&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 @font-face {
-  font-family: 'AvenirBold';
+  font-family: "AvenirBold";
   src: url("../../public/assets/fonts/AvenirNextLTPro-Bold.otf");
 }
 @font-face {
-  font-family: 'AvenirRegular';
+  font-family: "AvenirRegular";
   src: url("../../public/assets/fonts/AvenirNextLTPro-Regular.otf");
 }
+
 :root {
-  --textColor: #213F7D;
   --bgColor: #ffffff;
+  --color1: #213f7d;
+  --color2: #39cdcc;
+  --color3: #2a9b9b;
+  --color4: #d93025;
+  --color5: #fbfbfb;
+  --color6: #F3FCFC;
+  --color7: #7A8CB1;  
 }
 
 *::selection {
-  background: var(--textColor);
+  background: var(--color1);
   color: #eaeaea;
 }
 
@@ -26,14 +33,7 @@
 
 html,
 body {
-  padding: 0;
-  margin: 0;
-  background-color: var(--bgColor);
+  @apply p-0 m-0 bg-[color:var(--bgColor)];
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
