@@ -1,9 +1,9 @@
 /* ************************************************************ */
-/* ******************** DashHEADER Component ****************** */
+/* ******************** DashHeader Component ****************** */
 /* ************************************************************ */
 .dash_header_wrapper {
-  @apply absolute top-0 left-0 w-screen m-0;
-  @apply flex flex-row justify-between px-4 md:px-8 py-4 md:py-6 shadow-md;
+  @apply fixed top-0 left-0 w-screen m-0 z-20 bg-white;
+  @apply flex flex-row justify-between px-4 md:px-8 py-4 shadow-md;
 }
 
 .dash_header_wrapper .left_wrapper {
@@ -153,4 +153,57 @@
 .logout_modal .bell,
 .logout_modal .logout a {
   @apply flex w-full space-x-4 items-center;
+}
+
+/* ************************************************************ */
+/* ******************** DashSideBar Component ****************** */
+/* ************************************************************ */
+
+.dash_sidebar_wrapper {
+  @apply xl:w-[20%] h-screen overflow-y-scroll bg-white;
+  @apply font-normal text-[color:var(--color7)] hidden md:block;
+  @apply text-base fixed top-0 left-0 shadow-md z-10;
+}
+
+.dash_sidebar_wrapper > div {
+  @apply px-5 cursor-pointer hover:bg-[color:var(--color6)];
+  @apply border-l-[3px] border-white py-2;
+  @apply hover:border-[color:var(--color2)];
+  @apply hover:text-[color:var(--color1)];
+}
+
+.dash_sidebar_wrapper > div > span:first-child img {
+  @apply w-full max-w-[16px] h-auto;
+}
+
+.dash_sidebar_wrapper > span {
+  @apply px-5;
+}
+
+.dash_sidebar_wrapper > h3 {
+  @apply font-semibold text-xs text-[color:var(--color8)] px-5;
+  @apply mt-[10%] uppercase mb-[3%];
+}
+
+.dash_sidebar_wrapper .switch_organisation {
+  @apply mt-[50%] flex w-full items-center space-x-2;
+  @apply text-[color:var(--color1)] cursor-pointer;
+}
+
+.dash_sidebar_wrapper .switch_organisation .text {
+  @apply flex items-center w-full space-x-1;
+}
+
+.dash_sidebar_wrapper .switch_organisation .text img {
+  @apply w-full max-w-[8px] h-auto;
+}
+
+.dash_sidebar_wrapper .dashboard {
+  @apply mt-[15%] flex w-full items-center space-x-2;
+}
+
+.dash_sidebar_wrapper .customers,
+.businesses,
+.settings {
+  @apply flex w-full items-center space-x-2;
 }
