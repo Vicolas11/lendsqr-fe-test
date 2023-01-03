@@ -7,8 +7,8 @@
 }
 
 .dash_header_wrapper .left_wrapper {
-  @apply flex justify-between  items-center md:space-x-3;
-  @apply w-full lg:w-1/2;
+  @apply flex justify-between items-center md:space-x-3;
+  @apply w-full lg:w-[60%];
 }
 
 .hamburger {
@@ -102,7 +102,7 @@
 /* ************************************************************ */
 .backDrop {
   backdrop-filter: blur(3px);
-  @apply fixed left-0 top-0 h-screen;
+  @apply fixed md:hidden left-0 top-0 h-screen;
   @apply w-full z-20 bg-[#0b1018de];
   /* @apply lg:ml-[15rem] lg:w-[calc(100%-15rem)]; */
 }
@@ -203,6 +203,71 @@
 }
 
 .dash_sidebar_wrapper .customers,
+.businesses,
+.settings {
+  @apply flex w-full items-center space-x-2;
+}
+
+/* ******************************************************************* */
+/* ******************** MobileDashSideBar Component ****************** */
+/* ******************************************************************* */
+
+.mobile_dash_sidebar_wrapper {
+  @apply h-screen overflow-y-scroll bg-white pb-2;
+  @apply font-normal text-[color:var(--color7)] md:hidden block;
+  @apply text-base fixed top-0 left-0 shadow-md z-30 overflow-x-hidden;
+}
+
+.mobile_dash_sidebar_wrapper .close {
+  @apply absolute top-0 right-[-.5rem];
+}
+
+.mobile_dash_sidebar_wrapper .logo img {
+  @apply w-full max-w-[144.8px] h-auto;
+}
+
+.mobile_dash_sidebar_wrapper .logo {
+  @apply cursor-pointer pl-5 pt-5;
+}
+
+.mobile_dash_sidebar_wrapper > div {
+  @apply px-5 cursor-pointer hover:bg-[color:var(--color6)];
+  @apply border-l-[3px] border-white py-2;
+  @apply hover:border-[color:var(--color2)];
+  @apply hover:text-[color:var(--color1)];
+}
+
+.mobile_dash_sidebar_wrapper > div > span:first-child img {
+  @apply w-full max-w-[16px] h-auto;
+}
+
+.mobile_dash_sidebar_wrapper > span {
+  @apply px-5;
+}
+
+.mobile_dash_sidebar_wrapper > h3 {
+  @apply font-semibold text-xs text-[color:var(--color8)] px-5;
+  @apply mt-[10%] uppercase mb-[3%];
+}
+
+.mobile_dash_sidebar_wrapper .switch_organisation {
+  @apply mt-[10%] flex w-full items-center space-x-2;
+  @apply text-[color:var(--color1)] cursor-pointer;
+}
+
+.mobile_dash_sidebar_wrapper .switch_organisation .text {
+  @apply flex items-center w-full space-x-1;
+}
+
+.mobile_dash_sidebar_wrapper .switch_organisation .text img {
+  @apply w-full max-w-[8px] h-auto;
+}
+
+.mobile_dash_sidebar_wrapper .dashboard {
+  @apply mt-[15%] flex w-full items-center space-x-2;
+}
+
+.mobile_dash_sidebar_wrapper .customers,
 .businesses,
 .settings {
   @apply flex w-full items-center space-x-2;
