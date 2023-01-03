@@ -1,7 +1,3 @@
-:root {
-  --color1: #213f7d;
-  --color2: #39cdcc;
-}
 /* ************************************************************ */
 /* ******************** DashHEADER Component ****************** */
 /* ************************************************************ */
@@ -12,7 +8,7 @@
 
 .dash_header_wrapper .left_wrapper {
   @apply flex justify-between  items-center md:space-x-3;
-  @apply w-full lg:w-1/2 ;
+  @apply w-full lg:w-1/2;
 }
 
 .hamburger {
@@ -42,7 +38,7 @@
 
 .search_wrapper input {
   @apply border-2 border-[#545f7d26];
-  @apply h-[50px] md:h-[40px] w-full px-4 mr-[-.5rem];
+  @apply h-[45px] md:h-[40px] w-full px-4 mr-[-.5rem];
   @apply rounded-br-none rounded-tr-none;
   @apply rounded-bl-lg rounded-tl-lg pl-12 md:pl-4;
   @apply focus:border-2 focus:border-[color:var(--color2)];
@@ -52,7 +48,7 @@
 
 .search_wrapper div {
   @apply bg-[color:var(--color2)];
-  @apply h-[50px] md:h-[40px] px-4;
+  @apply h-[45px] md:h-[40px] px-4;
   @apply flex md:justify-start cursor-pointer;
   @apply rounded-br-lg rounded-tr-lg;
 }
@@ -71,11 +67,20 @@
 }
 
 .right_wrapper .bell img {
-  @apply  w-full max-w-[19.67px] h-auto;
+  @apply w-full max-w-[19.67px] h-auto;
+}
+
+.right_wrapper .mobile_avatar {
+  @apply flex flex-row sm:hidden justify-evenly items-center;
+  @apply sm:mr-2 space-x-2 cursor-pointer;
+}
+
+.right_wrapper .mobile_avatar img {
+  @apply w-11/12 md:w-full max-w-[48px] h-auto;
 }
 
 .right_wrapper .avatar {
-  @apply flex flex-row justify-evenly items-center;
+  @apply hidden sm:flex flex-row justify-evenly items-center;
   @apply sm:mr-2 space-x-2 cursor-pointer;
 }
 
@@ -84,10 +89,68 @@
 }
 
 .avatar .profile_name {
-  @apply hidden sm:flex flex-row justify-evenly items-center;
+  @apply sm:flex flex-row justify-evenly items-center;
   @apply space-x-1 font-medium;
 }
 
 .avatar .profile_name img {
   @apply w-full max-w-[12px] h-auto;
+}
+
+/* ************************************************************ */
+/* ******************** BackDrop Component ******************** */
+/* ************************************************************ */
+.backDrop {
+  backdrop-filter: blur(3px);
+  @apply fixed left-0 top-0 h-screen;
+  @apply w-full z-20 bg-[#0b1018de];
+  /* @apply lg:ml-[15rem] lg:w-[calc(100%-15rem)]; */
+}
+
+/* ************************************************************ */
+/* ******************** LogoutModal Component ****************** */
+/* ************************************************************ */
+.logout_modal {
+  @apply fixed top-[10%] left-1/2 translate-x-[-50%];
+  @apply z-30 bg-[color:var(--color5)] w-[90%] rounded-md;
+}
+
+.logout_modal > div {
+  @apply border-t-2 border-gray-300 px-3;
+  @apply text-[color:var(--color7)];
+  @apply cursor-pointer font-semibold py-4;
+  @apply hover:text-[color:var(--color1)];
+  @apply hover:bg-[color:var(--color6)];
+  @apply hover:border-t-[color:var(--color2)];
+}
+
+.logout_modal .modal_header {
+  @apply flex justify-between py-2 w-full;
+}
+
+.logout_modal .modal_header .logo {
+  @apply flex justify-center w-full text-center;
+}
+
+.logout_modal .modal_header .logo img {
+  @apply w-full max-w-[150px] h-auto;
+}
+
+.logout_modal .avatar {
+  @apply border-t-[color:var(--color5)];
+  @apply flex w-full space-x-4;
+}
+
+.logout_modal .avatar .profile_name {
+  @apply flex flex-col items-start;
+}
+
+.logout_modal .avatar .profile_name p {
+  @apply font-normal mt-[-.3rem];
+}
+
+.logout_modal .docs,
+.logout_modal .bell,
+.logout_modal .logout a {
+  @apply flex w-full space-x-4 items-center;
 }
