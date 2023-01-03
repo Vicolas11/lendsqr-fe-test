@@ -6,6 +6,7 @@ module.exports = {
     extend: {
       fontFamily: {
         custom: ["AvenirBold", "AvenirRegular"],
+        roboto: ["Roboto", "sans-serif"],
       },
     },
     screens: {
