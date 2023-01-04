@@ -1,7 +1,7 @@
+import { showLogoutModal, showSideBarModal } from "../store/slice/global.slice";
+import { useAppDispatch } from "../hooks/store.hook";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { Link } from "react-router-dom";
-import { useAppDispatch } from "../hooks/store.hook";
-import { showLogoutModal } from "../store/slice/global.slice";
 
 const DashHeader = (): JSX.Element => {
   const dispatch = useAppDispatch();
@@ -10,12 +10,15 @@ const DashHeader = (): JSX.Element => {
     <header className="dash_header_wrapper">
       <div className="left_wrapper">
         <div className="logo">
-          <Link to={"/login"}>
+          <Link to={"/"}>
             <img src="../assets/svg/logo.svg" alt="Logo" />
           </Link>
         </div>
         <div className="search_wrapper">
-          <button className="hamburger">
+          <button
+            className="hamburger"
+            onClick={() => dispatch(showSideBarModal())}
+          >
             <HiOutlineMenuAlt2 className="w-8 h-8 md:h-10 p-0" />
           </button>
           <input type="text" placeholder="Search for anything" />
