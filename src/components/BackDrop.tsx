@@ -1,8 +1,8 @@
+import { hideLogoutModal, hideSideBarModal } from "../store/slice/global.slice";
 import { BackDropProps } from "../../interfaces/backdrop.interface";
-import { hideLogoutModal } from "../store/slice/global.slice";
-import { useAppDispatch } from "../hooks/store.hook";
 import { CSSTransition } from "react-transition-group";
-import "../styles/Animation.css";
+import { useAppDispatch } from "../hooks/store.hook";
+import animate from "../styles/Animation.module.css";
 import "../styles/Dashboard.css";
 import { useRef } from "react";
 
@@ -19,13 +19,16 @@ const BackBlurDrop = ({ show, exit = 1000 }: BackDropProps) => {
       timeout={{ enter: 400, exit }}
       classNames={{
         enter: "",
-        enterActive: "fadeEnterActive",
+        enterActive: animate.fadeEnterActive,
         exit: "",
-        exitActive: "fadeExitActive",
+        exitActive: animate.fadeExitActive,
       }}
     >
       <div
-        onClick={() => dispatch(hideLogoutModal())}
+        onClick={() => {
+          dispatch(hideLogoutModal());
+          dispatch(hideSideBarModal());
+        }}
         ref={nodeRef}
         className="backDrop"
       ></div>
