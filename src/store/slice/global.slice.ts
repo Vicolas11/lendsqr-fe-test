@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   logoutModal: false,
+  sideBarModal: false,
 };
 
 const globalSlice = createSlice({
@@ -14,9 +15,20 @@ const globalSlice = createSlice({
     hideLogoutModal: (state) => {
       state.logoutModal = false;
     },
+    showSideBarModal: (state) => {
+      state.sideBarModal = true;
+    },
+    hideSideBarModal: (state) => {
+      state.sideBarModal = false;
+    },
   },
 });
 
-export const { showLogoutModal, hideLogoutModal } = globalSlice.actions;
+export const {
+  showLogoutModal,
+  hideLogoutModal,
+  showSideBarModal,
+  hideSideBarModal,
+} = globalSlice.actions;
 
 export default globalSlice.reducer;
