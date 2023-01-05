@@ -5,16 +5,14 @@ const Businesses = (): JSX.Element => {
   return (
     <Fragment>
       <h3>businesses</h3>
-      {dashData[1]?.businesses?.map((data) => {
-        return (
-          <div key={`${data?.id}`} className="businesses">
-            <span>
-              <img src={`../assets/svg/${data?.icon}`} alt={data?.alt} />
-            </span>
-            <h3>{data?.title}</h3>
-          </div>
-        );
-      })}
+      {dashData[1]?.businesses?.map((data) => (
+        <div key={`${data?.id}`} className="businesses">
+          <span>
+            <img src={`../assets/svg/${data?.icon}`} alt={data?.alt} />
+          </span>
+          <h3>{data?.title}</h3>
+        </div>
+      ))}
     </Fragment>
   );
 };
