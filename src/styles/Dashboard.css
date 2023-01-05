@@ -53,9 +53,8 @@
 
 .search_wrapper div {
   @apply bg-[color:var(--color2)];
-  @apply h-[45px] md:h-[40px] px-4;
-  @apply flex md:justify-start cursor-pointer;
-  @apply rounded-br-lg rounded-tr-lg;
+  @apply h-[45px] md:h-[40px] px-4 rounded-br-lg rounded-tr-lg;
+  @apply flex md:justify-start cursor-pointer hover:bg-[color:var(--color3)];
 }
 
 .search_wrapper div img {
@@ -306,7 +305,6 @@
   @apply mt-[4%] flex ml-0 overflow-x-auto;
   @apply space-x-6 w-full mx-auto;
   @apply flex-row justify-between;
-  /* @apply border-2 border-red-500; */
 }
 
 .dash_main_wrapper .card_box {
@@ -315,7 +313,6 @@
   @apply space-y-3 justify-items-stretch px-6 py-4 pb-6;
   border: 1px solid rgba(20, 40, 80, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-  /* flex: 1 1 auto; */
 }
 
 .dash_main_wrapper .card_box img {
@@ -350,7 +347,7 @@
 }
 
 .table_head {
-  @apply flex items-center space-x-2 whitespace-nowrap;
+  @apply flex items-center space-x-2 whitespace-nowrap w-full;
 }
 
 .dash_table_row {
@@ -402,4 +399,66 @@
 
 .pagination_wrapper .right span img {
   @apply w-full max-w-[6.57px] h-auto;
+}
+
+/* *********************************************************************** */
+/* ******************** FilterDropDown Component ************************* */
+/* *********************************************************************** */
+
+.filter_dropdown_wrapper {
+  @apply hidden absolute top-[30px] left-0 min-w-[250px] px-4 py-6;
+  @apply bg-[color:var(--bgColor)] rounded m-0;
+  border: 1px solid rgba(84, 95, 125, 0.14);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.filter_dropdown_wrapper form {
+  @apply flex flex-col space-y-4 font-semibold;
+  @apply text-[color:var(--color8)] text-sm;
+}
+
+.filter_dropdown_wrapper form > div {
+  @apply flex flex-col items-start w-full space-y-1;
+}
+
+.filter_dropdown_wrapper form > div select {
+  @apply w-full border border-[color:var(--colorX)];
+  @apply rounded-lg py-2 px-4 font-normal bg-transparent;
+  @apply focus:border focus:border-[color:var(--color2)];
+  @apply focus:outline focus:outline-[color:var(--color2)];
+}
+
+.filter_dropdown_wrapper form > div input {
+  @apply w-full border border-[color:var(--colorX)];
+  @apply placeholder:font-normal py-2 px-4 rounded-lg font-normal;
+  @apply focus:border focus:border-[color:var(--color2)];
+  @apply focus:outline focus:outline-[color:var(--color2)];
+}
+
+.filter_dropdown_wrapper .btn_wrapper {
+  @apply flex flex-row items-center justify-between space-y-0 space-x-2;
+}
+
+.filter_dropdown_wrapper .btn_wrapper .reset_btn {
+  @apply w-full px-4 py-2 text-[color:var(--color8)];
+  @apply border border-[color:var(--color8)] rounded-lg;
+  @apply hover:bg-[color:var(--color8)] hover:text-[color:var(--bgColor)];
+}
+
+.filter_dropdown_wrapper .btn_wrapper .filter_btn {
+  @apply bg-[color:var(--color2)] w-full px-4 py-2 rounded-lg;
+  @apply border border-[color:var(--color2)] text-[color:var(--bgColor)];
+  @apply hover:bg-[color:var(--color3)] hover:border-[color:var(--color3)];
+}
+
+.table_head:hover .filter_dropdown_wrapper {
+  @apply flex;
+}
+
+.table_head:hover .filter_dropdown_wrapper {
+  display: block;
+}
+
+.table_head_row > th:last-child:hover .filter_dropdown_wrapper {
+  @apply left-[-120%];
 }
