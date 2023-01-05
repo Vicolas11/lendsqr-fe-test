@@ -9,7 +9,7 @@
 }
 
 .page_not_found h1 {
-  @apply text-4xl font-[AvenirBold] text-[#213F7D] mb-2 mt-[-2rem];
+  @apply text-4xl font-[AvenirBold] text-[color:var(--color1)] mb-2 mt-[-2rem];
 }
 
 .page_not_found p {
@@ -17,8 +17,8 @@
 }
 
 .page_not_found button {
-  @apply bg-[#39cdcc] text-[#FBFBFB];
+  @apply bg-[color:var(--color2)] text-[#FBFBFB];
   @apply py-2 px-6 rounded-md;
-  @apply hover:bg-[#2a9b9b];
+  @apply hover:bg-[color:var(--color3)];
   @apply tracking-widest font-semibold;
 }
