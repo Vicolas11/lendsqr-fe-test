@@ -52,7 +52,7 @@
 
 .inputStyle {
   @apply px-4 w-full h-[50px];
-  @apply border-2 border-[#545f7d26];
+  @apply border-2 border-[color:var(--colorX)];
   @apply rounded-[5px] focus:border-2 active:border-2;
   @apply focus:border-[color:var(--color2)];
   @apply active:border-[color:var(--color2)];
