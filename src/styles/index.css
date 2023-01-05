@@ -18,13 +18,14 @@
   --bgColor: #ffffff;
   --color1: #213f7d;
   --color2: #39cdcc;
-  --color3: #2a9b9b;
+  --color3: #33afaf;
   --color4: #d93025;
   --color5: #fbfbfb;
-  --color6: #F3FCFC;
-  --color7: #7A8CB1;
-  --color8: #545F7D;
+  --color6: #f3fcfc;
+  --color7: #7a8cb1;
+  --color8: #545f7d;
   --color9: #213f7d1a;
+  --colorX: #545f7d26;
 }
 
 *::selection {
@@ -59,4 +60,38 @@ body {
   @apply font-worksans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+select {
+  background: url("../../public/assets/svg/dropdown.svg") no-repeat;
+  background-position: calc(100% - 1.2rem) center !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  padding-right: 2rem !important;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 1;
+  display: block;
+  background: url("../../public/assets/svg/calendar.svg") no-repeat;
+  background-position: center !important;
+  width: 16px;
+  height: 16px;
+}
+
+#date {
+  background: url("../../public/assets/svg/calendar.svg") no-repeat;
+  background-position: calc(100% - 1.2rem) center !important;
+}
+
+#date:focus {
+  background: none;
+}
+
+button {
+  transition: 250ms background ease;
+  -webkit-transition: 250ms background ease;
+  -moz-transition: 250ms background ease;
+  -o-transition: 250ms background ease;
 }
