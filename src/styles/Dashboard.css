@@ -160,7 +160,7 @@
   @apply flex w-full space-x-4 items-center;
 }
 
-/* ************************************************************ */
+/* ************************************************************* */
 /* ******************** DashSideBar Component ****************** */
 /* ************************************************************ */
 
@@ -173,10 +173,17 @@
 }
 
 .dash_sidebar_wrapper > div {
-  @apply px-5 cursor-pointer hover:bg-[color:var(--color6)];
+  @apply px-5 cursor-pointer hover:bg-gray-100;
   @apply border-l-[3px] border-white py-2;
-  @apply hover:border-[color:var(--color2)];
+  @apply hover:border-[color:var(--color9)];
   @apply hover:text-[color:var(--color1)];
+}
+
+#customers_0 {
+  @apply px-5 cursor-pointer bg-[color:var(--color6)];
+  @apply border-l-[3px] py-2;
+  @apply border-[color:var(--color2)];
+  @apply text-[color:var(--color1)];
 }
 
 .dash_sidebar_wrapper > div > span:first-child img {
@@ -239,9 +246,9 @@
 }
 
 .mobile_dash_sidebar_wrapper > div {
-  @apply px-5 cursor-pointer hover:bg-[color:var(--color6)];
+  @apply px-5 cursor-pointer hover:hover:bg-gray-100;
   @apply border-l-[3px] border-white py-2;
-  @apply hover:border-[color:var(--color2)];
+  @apply hover:border-[color:var(--color9)];
   @apply hover:text-[color:var(--color1)];
 }
 
@@ -347,8 +354,8 @@
 }
 
 .dash_table_row {
-  @apply border-b border-[#e9ecf2];
-  @apply hover:bg-gray-50 whitespace-nowrap;
+  @apply border-b border-[#e9ecf2] hover:text-[color:var(--color1)];
+  @apply hover:bg-gray-100 whitespace-nowrap;
 }
 
 .dash_table_row:last-child {
