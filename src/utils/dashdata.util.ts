@@ -54,6 +54,12 @@ export const dashData = [
         icon: "clipboard-list.svg",
         alt: "clipboard-list",
       },
+      {
+        id: 21,
+        title: "Systems Messages",
+        icon: "tire.svg",
+        alt: "tire",
+      },
     ],
   },
   {
