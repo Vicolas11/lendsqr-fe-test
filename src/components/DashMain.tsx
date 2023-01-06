@@ -1,11 +1,12 @@
+import styles from "../styles/Dashboard.module.scss";
 import CardBoxes from "./CardBoxes";
 import DashTable from "./DashTable";
 
 const DashMain = (): JSX.Element => {
   return (
-    <div className="dash_main_wrapper">
+    <div className={styles.dash_main_wrapper}>
       <p>Users</p>
-      <div className="card_box_wrapper">
+      <div className={styles.card_box_wrapper}>
         <CardBoxes />
       </div>
       <DashTable />

@@ -1,9 +1,10 @@
 import { hideLogoutModal, hideSideBarModal } from "../store/slice/global.slice";
 import { BackDropProps } from "../../interfaces/backdrop.interface";
 import { CSSTransition } from "react-transition-group";
-import { useAppDispatch } from "../hooks/store.hook";
 import animate from "../styles/Animation.module.css";
-import "../styles/Dashboard.css";
+import { useAppDispatch } from "../hooks/store.hook";
+import styles from "../styles/Dashboard.module.scss";
+
 import { useRef } from "react";
 
 const BackBlurDrop = ({ show, exit = 1000 }: BackDropProps) => {
@@ -30,7 +31,7 @@ const BackBlurDrop = ({ show, exit = 1000 }: BackDropProps) => {
           dispatch(hideSideBarModal());
         }}
         ref={nodeRef}
-        className="backDrop"
+        className={styles.backDrop}
       ></div>
     </CSSTransition>
   );

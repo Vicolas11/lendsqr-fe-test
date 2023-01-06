@@ -1,4 +1,5 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+import styles from "../styles/LoginPage.module.scss";
 import { Link } from "react-router-dom";
 
 const LoginForm = (): JSX.Element => {
@@ -37,7 +38,7 @@ const LoginForm = (): JSX.Element => {
   const onSubmitHandler = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     const { email, password } = textInput;
-    
+
     // Validate for empty inputs
     if (email.length <= 0 && password.length <= 0) {
       setShowErrMsg({ email: true, password: true });
@@ -56,15 +57,15 @@ const LoginForm = (): JSX.Element => {
   };
 
   return (
-    <div className="inner_wrapper">
-      <div className="welcome">
+    <div className={styles.inner_wrapper}>
+      <div className={styles.welcome}>
         <h1>Welcome!</h1>
         <p>Enter details to login.</p>
       </div>
-      <form className="login_form" method="POST" onSubmit={onSubmitHandler}>
-        <div className="email_input_wrapper">
+      <form className={styles.login_form} method="POST" onSubmit={onSubmitHandler}>
+        <div className={styles.email_input_wrapper}>
           <input
-            className={showErrMsg.email ? `errorInputStyle` : `inputStyle`}
+            className={showErrMsg.email ?  styles.errorInputStyle : styles.inputStyle}
             type="email"
             id="email"
             name="email"
@@ -72,9 +73,9 @@ const LoginForm = (): JSX.Element => {
             value={textInput.email}
             onChange={onEmailChangeHandler}
           />
-          {showErrMsg.email && <p className="errMsg">Enter an Email</p>}
+          {showErrMsg.email && <p className={styles.errMsg}>Enter an Email</p>}
         </div>
-        <div className="password_input_wrapper">
+        <div className={styles.password_input_wrapper}>
           <label
             htmlFor="password"
             onClick={() => setShowPassword((prev) => !prev)}
@@ -82,7 +83,7 @@ const LoginForm = (): JSX.Element => {
             {showPassword ? "HIDE" : "SHOW"}
           </label>
           <input
-            className={showErrMsg.password ? `errorInputStyle` : `inputStyle`}
+            className={showErrMsg.password ? styles.errorInputStyle : styles.inputStyle}
             type={showPassword ? "text" : "password"}
             id="password"
             name="password"
@@ -90,9 +91,9 @@ const LoginForm = (): JSX.Element => {
             value={textInput.password}
             onChange={onPasswordChangeHandler}
           />
-          {showErrMsg.password && <p className="errMsg">Enter Password</p>}
+          {showErrMsg.password && <p className={styles.errMsg}>Enter Password</p>}
         </div>
-        <h2 className="forgetPassword">
+        <h2 className={styles.forgetPassword}>
           <Link to={"/login"}>FORGET PASSWORD?</Link>
         </h2>
         <div>

@@ -1,3 +1,4 @@
+import styles from "../styles/Dashboard.module.scss";
 import { dashData } from "../utils/dashdata.util";
 import { Fragment } from "react";
 
@@ -6,7 +7,7 @@ const Settings = (): JSX.Element => {
     <Fragment>
       <h3>settings</h3>
       {dashData[2]?.settings?.map((data) => (
-        <div key={`${data?.id}`} className="settings">
+        <div key={`${data?.id}`} className={styles.settings}>
           <span>
             <img src={`../assets/svg/${data?.icon}`} alt={data?.alt} />
           </span>

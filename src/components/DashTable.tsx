@@ -1,4 +1,5 @@
 import { userStatus } from "../utils/userstatus.util";
+import styles from "../styles/Dashboard.module.scss";
 import { SlOptionsVertical } from "react-icons/sl";
 import { dashData } from "../utils/dashdata.util";
 import UserOptionModal from "./UserOptionModal";
@@ -21,17 +22,17 @@ const DashTable = (): JSX.Element => {
 
   return (
     <Fragment>
-      <div className="dash_table_wrapper">
+      <div className={styles.dash_table_wrapper}>
         <table>
           <thead>
-            <tr className="table_head_row">
+            <tr className={styles.table_head_row}>
               {columnTitle.map((lbl, idx) => (
                 <th
                   key={`${idx}`}
                   scope="col"
                   className="py-3 px-2 cursor-pointer relative"
                 >
-                  <div className="table_head">
+                  <div className={styles.table_head}>
                     {lbl}
                     <MdFilterList className="ml-1 w-4 h-4 p-0 " />
                     <FilterDropDown />
@@ -40,17 +41,17 @@ const DashTable = (): JSX.Element => {
               ))}
             </tr>
           </thead>
-          <tbody className="table_body">
+          <tbody className={styles.table_body}>
             {tableData?.map((item, idx) => (
-              <tr key={`${idx}`} className="dash_table_row">
+              <tr key={`${idx}`} className={styles.dash_table_row}>
                 <td>{item?.organisation}</td>
                 <td>{item?.username}</td>
                 <td>{item?.email}</td>
                 <td>{item?.phone}</td>
                 <td>{item?.date}</td>
                 {userStatus({ status: item?.status })}
-                <td id="table_body_td" className="relative">
-                  <SlOptionsVertical className="option_icon" />
+                <td id="table_body_td" className={styles.relative}>
+                  <SlOptionsVertical className={styles.option_icon} />
                   <UserOptionModal />
                 </td>
               </tr>

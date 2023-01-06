@@ -1,11 +1,12 @@
+import styles from "../styles/Dashboard.module.scss";
 import { useRef } from "react";
 
 const FilterDropDown = (): JSX.Element => {
   const ref = useRef<HTMLInputElement>(null);
   return (
-    <div className="filter_dropdown_wrapper">
+    <div className={styles.filter_dropdown_wrapper}>
       <form>
-        <div className="org">
+        <div className={styles.org}>
           <label htmlFor="org">Organisation</label>
           <select name="org" id="org">
             <option value="">Select</option>
@@ -14,15 +15,15 @@ const FilterDropDown = (): JSX.Element => {
             <option value="Lendstar">Lendstar</option>
           </select>
         </div>
-        <div className="user">
+        <div className={styles.user}>
           <label htmlFor="user">Username</label>
           <input type="text" name="user" id="user" placeholder="User" />
         </div>
-        <div className="email">
+        <div className={styles.email}>
           <label htmlFor="email">Email</label>
           <input type="email" name="email" id="email" placeholder="Email" />
         </div>
-        <div className="date">
+        <div className={styles.date}>
           <label htmlFor="date">Date</label>
           <input
             type="text"
@@ -37,7 +38,7 @@ const FilterDropDown = (): JSX.Element => {
             }}
           />
         </div>
-        <div className="phone">
+        <div className={styles.phone}>
           <label htmlFor="phone">Phone Number</label>
           <input
             type="tel"
@@ -46,7 +47,7 @@ const FilterDropDown = (): JSX.Element => {
             placeholder="Phone Number"
           />
         </div>
-        <div className="status">
+        <div className={styles.status}>
           <label htmlFor="status">Status</label>
           <select name="status" id="status">
             <option value="">Select</option>
@@ -56,9 +57,9 @@ const FilterDropDown = (): JSX.Element => {
             <option value="Blacklisted">Blacklisted</option>
           </select>
         </div>
-        <div className="btn_wrapper">
-          <button className="reset_btn">Reset</button>
-          <button className="filter_btn">Filter</button>
+        <div className={styles.btn_wrapper}>
+          <button className={styles.reset_btn}>Reset</button>
+          <button className={styles.filter_btn}>Filter</button>
         </div>
       </form>
     </div>

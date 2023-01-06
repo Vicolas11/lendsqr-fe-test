@@ -1,3 +1,4 @@
+import styles from "../styles/Dashboard.module.scss";
 import { dashData } from "../utils/dashdata.util";
 import { Fragment } from "react";
 
@@ -6,7 +7,7 @@ const Customers = (): JSX.Element => {
     <Fragment>
       <h3>customers</h3>
       {dashData[0]?.customers?.map((data, idx) => (
-        <div key={`${data?.id}`} className="customers" id={`customers_${idx}`}>
+        <div key={`${data?.id}`} className={styles.customers} id={styles[`customers_${idx}`]}>
           <span>
             <img src={`../assets/svg/${data?.icon}`} alt={data?.alt} />
           </span>

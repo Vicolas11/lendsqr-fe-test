@@ -1,18 +1,19 @@
+import styles from "../styles/UserProfile.module.scss";
+
 const GeneralDetails = (): JSX.Element => {
   return (
-    <div className="general_details_wrapper">
-      <div className="upper">
-        <div className="profile_name">
+    <div className={styles.general_details_wrapper}>
+      <div className={styles.upper}>
+        <div className={styles.profile_name}>
           <span>
             <img src="../assets/svg/profile-avatar.svg" alt="avatar" />
           </span>
-          <span className="full_name">
+          <span className={styles.full_name}>
             <h1>Grace Effiom</h1>
             <p>LSQFf587g9O</p>
           </span>
         </div>
-        {/* <div className="vertical_line"></div> */}
-        <div className="user_tier">
+        <div className={styles.user_tier}>
           <h2>User's Tier</h2>
           <span>
             <img src={"../assets/svg/star-fill.svg"} alt="star-fill" />
@@ -20,13 +21,12 @@ const GeneralDetails = (): JSX.Element => {
             <img src={"../assets/svg/star-outline.svg"} alt="star-outline" />
           </span>
         </div>
-        {/* <div className="vertical_line"></div> */}
-        <div className="amount">
+        <div className={styles.amount}>
           <h1>₦200,000.00</h1>
           <p>991235678/Providus Bank</p>
         </div>
       </div>
-      <div className="below">
+      <div className={styles.below}>
         <span>
           <h2>General Details</h2>
         </span>

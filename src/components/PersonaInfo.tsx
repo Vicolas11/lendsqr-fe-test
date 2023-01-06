@@ -1,9 +1,10 @@
 import { InitData, InitDataAlt } from "../../interfaces/userdata.interface";
+import styles from "../styles/UserProfile.module.scss";
 import { userData } from "../utils/userdata.utils";
 
 const PersonaInfo = () => {
   return (
-    <div className="personal_info_wrapper">
+    <div className={styles.personal_info_wrapper}>
       {userData.map((_, index) => {
         const element = userData[index];
         const { title, data } = element;
@@ -11,7 +12,7 @@ const PersonaInfo = () => {
           <div key={`${index}`}>
             <h3>{title}</h3>
             {title === "Guarantor" ? (
-              <div className="gurantor_wrapper">
+              <div className={styles.gurantor_wrapper}>
                 {data.map((_, idx) => {
                   const temp = data[idx] as InitDataAlt;
                   const { gurantor } = temp;
@@ -31,7 +32,7 @@ const PersonaInfo = () => {
                 })}
               </div>
             ) : (
-              <div className="inner_wrapper">
+              <div className={styles.inner_wrapper}>
                 {data.map((info, idx) => {
                   const newInfo = info as InitData;
                   const { subtitle, value } = newInfo;

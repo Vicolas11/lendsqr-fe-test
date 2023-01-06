@@ -1,3 +1,4 @@
+import styles from "../styles/Dashboard.module.scss";
 import { useNavigate } from "react-router-dom";
 import Businesses from "./Businesses";
 import Customers from "./Customers";
@@ -7,17 +8,17 @@ const DashSideBar = (): JSX.Element => {
   const navigate = useNavigate();
 
   return (
-    <aside className="dash_sidebar_wrapper">
-      <span className="switch_organisation">
+    <aside className={styles.dash_sidebar_wrapper}>
+      <span className={styles.switch_organisation}>
         <span>
           <img src="../assets/svg/briefcase.svg" alt="Briefcase" />
         </span>
-        <span className="text">
+        <span className={styles.text}>
           <h3>Switch Organization</h3>
           <img src="../assets/svg/dropdown.svg" alt="DropDown" />
         </span>
       </span>
-      <div className="dashboard">
+      <div className={styles.dashboard}>
         <span>
           <img src="../assets/svg/home.svg" alt="home" />
         </span>
@@ -26,13 +27,16 @@ const DashSideBar = (): JSX.Element => {
       <Customers />
       <Businesses />
       <Settings />
-      <div className="logout" onClick={() => navigate("/", { replace: true })}>
+      <div
+        className={styles.logout}
+        onClick={() => navigate("/", { replace: true })}
+      >
         <span>
           <img src="../assets/svg/sign-out.svg" alt="signout" />
         </span>
         <h3>Logout</h3>
       </div>
-      <h2 className="version">v1.2.0</h2>
+      <h2 className={styles.version}>v1.2.0</h2>
     </aside>
   );
 };

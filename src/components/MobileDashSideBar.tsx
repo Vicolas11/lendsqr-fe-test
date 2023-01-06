@@ -1,6 +1,7 @@
 import { hideSideBarModal } from "../store/slice/global.slice";
 import { ModalProps } from "../../interfaces/modal.interface";
 import { CSSTransition } from "react-transition-group";
+import styles from "../styles/Dashboard.module.scss";
 import { useAppDispatch } from "../hooks/store.hook";
 import animate from "../styles/Animation.module.css";
 import { useNavigate } from "react-router-dom";
@@ -32,25 +33,28 @@ const MobileDashSideBar = ({ show }: ModalProps): JSX.Element => {
           exitActive: animate.slideExitActive,
         }}
       >
-        <aside className="mobile_dash_sidebar_wrapper" ref={nodeRef}>
-          <div className="close" onClick={() => dispatch(hideSideBarModal())}>
+        <aside className={styles.mobile_dash_sidebar_wrapper} ref={nodeRef}>
+          <div
+            className={styles.close}
+            onClick={() => dispatch(hideSideBarModal())}
+          >
             <MdClose className="w-8 h-8 md:h-10 pl-2 text-[#213F7D]" />
           </div>
-          <div className="logo">
+          <div className={styles.logo}>
             <Link to={"/"}>
               <img src="../assets/svg/logo.svg" alt="Logo" />
             </Link>
           </div>
-          <span className="switch_organisation">
+          <span className={styles.switch_organisation}>
             <span>
               <img src="../assets/svg/briefcase.svg" alt="Briefcase" />
             </span>
-            <span className="text">
+            <span className={styles.text}>
               <h3>Switch Organization</h3>
               <img src="../assets/svg/dropdown.svg" alt="DropDown" />
             </span>
           </span>
-          <div className="dashboard">
+          <div className={styles.dashboard}>
             <span>
               <img src="../assets/svg/home.svg" alt="home" />
             </span>
@@ -60,7 +64,7 @@ const MobileDashSideBar = ({ show }: ModalProps): JSX.Element => {
           <Businesses />
           <Settings />
           <div
-            className="logout"
+            className={styles.logout}
             onClick={() => navigate("/", { replace: true })}
           >
             <span>
@@ -68,7 +72,7 @@ const MobileDashSideBar = ({ show }: ModalProps): JSX.Element => {
             </span>
             <h3>Logout</h3>
           </div>
-          <h2 className="version">v1.2.0</h2>
+          <h2 className={styles.version}>v1.2.0</h2>
         </aside>
       </CSSTransition>
     </Fragment>

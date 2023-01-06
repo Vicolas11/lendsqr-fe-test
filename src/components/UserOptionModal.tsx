@@ -1,6 +1,8 @@
+import styles from "../styles/Dashboard.module.scss";
+
 const UserOptionModal = (): JSX.Element => {
   return (
-    <div className="user_option_modal">
+    <div className={styles.user_option_modal}>
       <div>
         <div>
           <span>

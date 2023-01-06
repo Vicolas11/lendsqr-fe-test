@@ -1,11 +1,11 @@
 import MobileDashSideBar from "../components/MobileDashSideBar";
+import styles from "../styles/UserProfile.module.scss";
+import { useAppSelector } from "../hooks/store.hook";
 import DashSideBar from "../components/DashSideBar";
 import LogoutModal from "../components/LogoutModal";
-import DashHeader from "../components/DashHeader";
 import UserDetails from "../components/UserDetails";
-import { useAppSelector } from "../hooks/store.hook";
+import DashHeader from "../components/DashHeader";
 import { Fragment, useEffect } from "react";
-import "../styles/UserProfile.css";
 
 const UserProfile = (): JSX.Element => {
   const sideBarModal = useAppSelector((state) => state.global.sideBarModal);
@@ -20,7 +20,7 @@ const UserProfile = (): JSX.Element => {
       <DashHeader />
       {logoutModal && <LogoutModal show={logoutModal} />}
       <MobileDashSideBar show={sideBarModal} />
-      <div className="userprofile_inner_wrapper">
+      <div className={styles.userprofile_inner_wrapper}>
         <DashSideBar />
         <UserDetails />
       </div>

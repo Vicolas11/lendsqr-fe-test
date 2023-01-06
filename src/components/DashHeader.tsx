@@ -1,22 +1,24 @@
 import { showLogoutModal, showSideBarModal } from "../store/slice/global.slice";
 import { useAppDispatch } from "../hooks/store.hook";
+import styles from "../styles/Dashboard.module.scss";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import Logout from "./Logout";
 
 const DashHeader = (): JSX.Element => {
   const dispatch = useAppDispatch();
 
   return (
-    <header className="dash_header_wrapper">
-      <div className="left_wrapper">
-        <div className="logo">
+    <header className={styles.dash_header_wrapper}>
+      <div className={styles.left_wrapper}>
+        <div className={styles.logo}>
           <Link to={"/"}>
             <img src="../assets/svg/logo.svg" alt="logo" />
           </Link>
         </div>
-        <div className="search_wrapper">
+        <div className={styles.search_wrapper}>
           <button
-            className="hamburger"
+            className={styles.hamburger}
             onClick={() => dispatch(showSideBarModal())}
           >
             <HiOutlineMenuAlt2 className="w-8 h-8 md:h-10 p-0" />
@@ -28,27 +30,28 @@ const DashHeader = (): JSX.Element => {
         </div>
       </div>
 
-      <div className="right_wrapper">
-        <span className="docs">
+      <div className={styles.right_wrapper}>
+        <span className={styles.docs}>
           <h1>Docs</h1>
         </span>
-        <span className="bell">
+        <span className={styles.bell}>
           <img src="../assets/img/bell.png" alt="bell" />
         </span>
         {/* Mobile Screen */}
         <span
-          className="mobile_avatar"
+          className={styles.mobile_avatar}
           onClick={() => dispatch(showLogoutModal())}
         >
           <img src={"../assets/img/avatar.png"} alt="avatar" />
         </span>
         {/* Larger Screen */}
-        <span className="avatar">
+        <span className={styles.avatar}>
           <img src={"../assets/img/avatar.png"} alt="avatar" />
-          <div className="profile_name">
+          <div className={styles.profile_name}>
             <h3>Adedeji</h3>
             <img src="../assets/svg/dropdownarrow.svg" alt="DropDownArrow" />
           </div>
+          <Logout />
         </span>
       </div>
     </header>

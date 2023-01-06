@@ -1,26 +1,25 @@
+import styles from "../styles/LoginPage.module.scss";
 import LoginForm from "../components/LoginForm";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
-import "../styles/LoginPage.css";
 
 const LoginPage = (): JSX.Element => {
-  
   useEffect(() => {
     document.title = "Login";
   }, []);
 
   return (
-    <div className="login_page_wrapper">
-      <div className="logo">
+    <div className={styles.login_page_wrapper}>
+      <div className={styles.logo}>
         <Link to={"/login"}>
           <img src="../assets/svg/logo.svg" alt="Logo" />
         </Link>
       </div>
-      <div className="main_wrapper">
-        <div className="svg_wrapper">
-          <img src="../assets/svg/pablo-sign-in.svg" alt="PabloSignIn" />
+      <div className={styles.main_wrapper}>
+        <div className={styles.svg_wrapper}>
+          <img src="../assets/svg/pablo-sign-in.svg" alt="pablosignin" />
         </div>
-        <div className="login_form_wrapper">
+        <div className={styles.login_form_wrapper}>
           <LoginForm />
         </div>
       </div>

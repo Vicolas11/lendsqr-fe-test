@@ -1,8 +1,10 @@
+import styles from "../styles/Dashboard.module.scss";
+
 const Pagination = (): JSX.Element => {
   const numArr = [1, 2, 3, "...", 15, 16];
   return (
-    <div className="pagination_wrapper">
-      <div className="left">
+    <div className={styles.pagination_wrapper}>
+      <div className={styles.left}>
         <h1>Showing</h1>
         <span>
           <h1>100</h1>
@@ -10,7 +12,7 @@ const Pagination = (): JSX.Element => {
         </span>
         <h1>out of 100</h1>
       </div>
-      <div className="right">
+      <div className={styles.right}>
         <span>
           <img src="../assets/svg/arrow-left.svg" alt="arrow-left" />
         </span>
