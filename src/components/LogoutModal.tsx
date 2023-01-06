@@ -1,16 +1,16 @@
 import { hideLogoutModal } from "../store/slice/global.slice";
 import { ModalProps } from "../../interfaces/modal.interface";
 import { useAppDispatch } from "../hooks/store.hook";
-import { RiShutDownLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { Fragment, useRef } from "react";
 import { SlDocs } from "react-icons/sl";
 import { BsBell } from "react-icons/bs";
-import { Link } from "react-router-dom";
 import BackBlurDrop from "./BackDrop";
 
 const LogoutModal = ({ show }: ModalProps): JSX.Element => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const nodeRef = useRef(null);
 
   return (
@@ -34,18 +34,19 @@ const LogoutModal = ({ show }: ModalProps): JSX.Element => {
           </div>
         </div>
         <div className="docs">
-          <SlDocs className="w-6 h-6 md:h-8 p-0" />
+          <SlDocs className="w-5 h-5 md:h-8 p-0" />
           <h1>Docs</h1>
         </div>
         <div className="bell">
-          <BsBell className="w-6 h-6 md:h-8 p-0" />
+          <BsBell className="w-5 h-5 md:h-8 p-0" />
           <h1>Notifications</h1>
         </div>
-        <div className="logout">
-          <Link to={"/"}>
-            <RiShutDownLine className="w-6 h-6 md:h-8 p-0" />
-            <h1>Logout</h1>
-          </Link>
+        <div
+          className="logout"
+          onClick={() => navigate("/", { replace: true })}
+        >
+          <img src={"../assets/svg/sign-out.svg"} alt="signout" />
+          <h1>Logout</h1>
         </div>
       </div>
     </Fragment>
