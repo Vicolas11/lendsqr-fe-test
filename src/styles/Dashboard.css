@@ -63,7 +63,7 @@
 
 .right_wrapper .docs h1 {
   @apply underline underline-offset-4 font-normal text-[16px];
-  @apply hidden sm:block font-roboto cursor-pointer;
+  @apply hidden sm:block font-roboto cursor-pointer hover:no-underline;
 }
 
 .right_wrapper .bell {
@@ -94,7 +94,7 @@
 
 .avatar .profile_name {
   @apply sm:flex flex-row justify-evenly items-center;
-  @apply space-x-1 font-medium;
+  @apply space-x-1 font-semibold;
 }
 
 .avatar .profile_name img {
@@ -155,7 +155,7 @@
 
 .logout_modal .docs,
 .logout_modal .bell,
-.logout_modal .logout a {
+.logout_modal .logout {
   @apply flex w-full space-x-4 items-center;
 }
 
@@ -204,11 +204,11 @@
 }
 
 .dash_sidebar_wrapper .switch_organisation .text {
-  @apply flex items-center w-full space-x-1;
+  @apply flex items-center w-full space-x-2;
 }
 
 .dash_sidebar_wrapper .switch_organisation .text img {
-  @apply w-full max-w-[8px] h-auto;
+  @apply w-full max-w-[11px] h-auto;
 }
 
 .dash_sidebar_wrapper .dashboard {
@@ -219,6 +219,11 @@
 .businesses,
 .settings {
   @apply flex w-full items-center space-x-2;
+}
+
+.dash_sidebar_wrapper .logout {
+  @apply mt-[20%] flex w-full items-center space-x-2;
+  @apply border-t border-gray-200 py-5;
 }
 
 /* ******************************************************************* */
@@ -285,6 +290,15 @@
 .businesses,
 .settings {
   @apply flex w-full items-center space-x-2;
+}
+
+.mobile_dash_sidebar_wrapper .logout {
+  @apply mt-[10%] flex w-full items-center space-x-2;
+  @apply border-t border-gray-200 py-5;
+}
+
+.version {
+  @apply lowercase font-normal text-xs px-5;
 }
 
 /* ******************************************************************* */
@@ -406,7 +420,7 @@
 /* *********************************************************************** */
 
 .filter_dropdown_wrapper {
-  @apply hidden absolute top-[30px] left-0 min-w-[250px] px-4 py-6;
+  @apply hidden absolute top-[30px] left-0 md:min-w-[270px] px-4 py-6;
   @apply bg-[color:var(--bgColor)] rounded m-0;
   border: 1px solid rgba(84, 95, 125, 0.14);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -461,4 +475,48 @@
 
 .table_head_row > th:last-child:hover .filter_dropdown_wrapper {
   @apply left-[-120%];
+}
+
+/* *********************************************************************** */
+/* ******************** UserOptionModal Component ************************* */
+/* *********************************************************************** */
+.user_option_modal {
+  @apply hidden absolute lg:min-w-[180px] top-0 right-0 rounded bg-[color:var(--bgColor)];
+  @apply text-[color:var(--color8)] font-semibold z-30;
+  border: 1px solid rgba(84, 95, 125, 0.04);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.user_option_modal div {
+  @apply flex flex-col;
+}
+
+.user_option_modal div > div {
+  @apply flex flex-row space-x-2 items-center cursor-pointer;
+  @apply hover:bg-gray-100 px-6 py-4;
+}
+
+.user_option_modal div > div p {
+  @apply m-0 text-sm;
+}
+
+.user_option_modal div > div span img {
+  @apply w-full max-w-[20px] h-auto;
+}
+
+.option_icon {
+  @apply w-5 h-5 cursor-pointer;
+}
+
+.option_icon:hover ~ .user_option_modal {
+  @apply block;
+}
+
+.table_body > tr:nth-last-child(2) > td:last-child:hover .user_option_modal {
+  @apply top-[-8rem];
+  /* @apply border-2 border-red-600; */
+}
+
+.table_body > tr:last-child > td:last-child:hover .user_option_modal {
+  @apply top-[-8rem];
 }
