@@ -11,7 +11,7 @@ const DashHeader = (): JSX.Element => {
       <div className="left_wrapper">
         <div className="logo">
           <Link to={"/"}>
-            <img src="../assets/svg/logo.svg" alt="Logo" />
+            <img src="../assets/svg/logo.svg" alt="logo" />
           </Link>
         </div>
         <div className="search_wrapper">
@@ -33,7 +33,7 @@ const DashHeader = (): JSX.Element => {
           <h1>Docs</h1>
         </span>
         <span className="bell">
-          <img src="../assets/svg/bell.svg" alt="Bell" />
+          <img src="../assets/img/bell.png" alt="bell" />
         </span>
         {/* Mobile Screen */}
         <span
