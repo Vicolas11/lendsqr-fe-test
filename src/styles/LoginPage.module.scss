@@ -1,0 +1,102 @@
+.login_page_wrapper .logo {
+  @apply absolute top-[3%] lg:top-[10%] left-[5%] z-20;
+  @apply cursor-pointer;
+}
+
+.login_page_wrapper .logo img {
+  @apply w-9/12 lg:w-full max-w-[173.76px] h-auto;
+}
+
+.main_wrapper {
+  @apply flex flex-col md:flex-row justify-between;
+  @apply absolute top-1/2 translate-y-[-50%];
+  @apply w-full px-3 mx-auto left-0 right-0;
+}
+
+.svg_wrapper {
+  @apply flex items-center justify-center mx-auto w-full;
+}
+
+.svg_wrapper img {
+  @apply w-9/12 lg:w-full max-w-[600px] h-auto;
+}
+
+.login_form_wrapper {
+  @apply flex flex-col justify-center w-full;
+  @apply mx-auto items-center;
+}
+
+.login_form_wrapper .inner_wrapper {
+  @apply w-full lg:w-9/12 p-3;
+}
+
+.welcome {
+  @apply text-left font-[AvenirRegular];
+}
+
+.welcome h1 {
+  @apply font-[AvenirBold] text-[35px] md:text-[40px] leading-[55px];
+  @apply text-color1 font-bold;
+  letter-spacing: -0.04em;
+}
+
+.welcome p {
+  @apply text-xl leading-[27.32px];
+  @apply font-normal text-[#545F7D];
+}
+
+.login_form {
+  @apply mt-14 space-y-6;
+  @apply font-[AvenirRegular];
+}
+
+.inputStyle {
+  @apply px-4 w-full h-[50px];
+  @apply border-2 border-colorX;
+  @apply rounded-[5px] focus:border-2 active:border-2;
+  @apply focus:border-color2;
+  @apply active:border-color2;
+  @apply focus:outline-color2;
+  @apply active:outline-color2;
+}
+
+.errorInputStyle {
+  @apply px-4 w-full h-[50px];
+  @apply border-2 rounded-[5px];
+  @apply border-color4;
+  @apply focus:border-color4;
+  @apply active:border-color4;
+  @apply focus:outline-color4;
+  @apply active:outline-color4;
+}
+
+.email_input_wrapper,
+.password_input_wrapper {
+  @apply relative;
+}
+
+.password_input_wrapper label {
+  @apply absolute right-4 top-1/2 translate-y-[-50%];
+  @apply font-semibold text-xs text-center;
+  @apply text-color2 cursor-pointer;
+  @apply hover:text-color3;
+}
+
+.errMsg {
+  @apply absolute text-color4 text-sm p-1;
+  @apply top-[2.9rem];
+}
+
+.forgetPassword {
+  @apply font-bold text-color2 text-xs;
+  @apply hover:underline-offset-4 hover:underline pb-2;
+  @apply hover:text-color3 w-fit;
+  @apply tracking-widest;
+}
+
+.login_form button {
+  @apply bg-color2 text-white text-sm;
+  @apply w-full py-4 px-6 rounded-lg transition-colors;
+  @apply hover:bg-color3 font-semibold;
+  @apply tracking-widest;
+}

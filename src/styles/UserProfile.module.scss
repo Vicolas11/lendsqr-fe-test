@@ -1,0 +1,179 @@
+.userprofile_inner_wrapper {
+  @apply relative top-0 left-0 flex;
+}
+
+/* ************************************************************ */
+/* ******************** UserDetails Component ****************** */
+/* ************************************************************ */
+.userdetails_wrapper {
+  @apply lg:ml-[25%] xl:ml-[20%] w-full bg-[#FBFBFB];
+  @apply text-color1 h-screen px-4 md:px-12 py-4 overflow-y-scroll;
+}
+
+/* ************************************************************ */
+/* ******************** ProfileNav Component ****************** */
+/* ************************************************************ */
+.profile_nav_wrapper {
+  @apply flex flex-col lit:mt-[30%] mt-[23%] md:mt-[15%];
+}
+
+.profile_nav_wrapper .back_to_users {
+  @apply flex space-x-2 items-center;
+}
+
+.profile_nav_wrapper .back_to_users a img {
+  @apply cursor-pointer w-full h-auto max-w-[26.72px];
+}
+
+.profile_nav_wrapper .inner_wrapper {
+  @apply flex flex-wrap space-y-4 md:space-y-0 w-full justify-between items-center mt-5;
+}
+
+.profile_nav_wrapper .inner_wrapper h1 {
+  @apply font-semibold text-2xl;
+}
+
+.profile_nav_wrapper .inner_wrapper .btn_wrapper {
+  @apply flex lit:flex-wrap sm:justify-between md:justify-end w-full sm:w-fit space-x-4;
+  @apply lit:space-x-0 lit:space-y-3 lit:w-full;
+}
+
+.profile_nav_wrapper .inner_wrapper .btn_wrapper button {
+  @apply px-[4%] py-[3%] md:px-[5%] md:py-[4%] border uppercase text-sm font-semibold tracking-widest rounded-lg;
+  @apply md:whitespace-nowrap;
+}
+
+.btn_wrapper .blacklist_btn {
+  @apply border-colorXI hover:bg-colorXI;
+  @apply text-colorXI hover:text-bgColor;
+}
+
+.btn_wrapper .activate_btn {
+  @apply border-color2 hover:bg-color2;
+  @apply text-color2 hover:text-bgColor;
+}
+
+/* **************************************************************** */
+/* ******************** GeneralDetails Component ****************** */
+/* **************************************************************** */
+.general_details_wrapper {
+  @apply flex flex-col items-baseline pt-4 px-6 bg-bgColor;
+  @apply whitespace-nowrap overflow-x-auto rounded mt-[5%];
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.general_details_wrapper h1 {
+  @apply text-[22px] font-semibold;
+}
+
+.general_details_wrapper .upper {
+  @apply flex justify-start items-center mb-6 md:mb-12;
+}
+
+.general_details_wrapper .upper div {
+  @apply justify-center text-left px-0 md:px-2 py-4 md:py-6 w-fit;
+  @apply flex-shrink-0 flex-grow-0 basis-auto border-l border-gray-200;
+}
+
+.general_details_wrapper div:first-child {
+  @apply border-none;
+}
+
+.general_details_wrapper .upper .profile_name {
+  @apply flex space-x-2 items-center pr-6;
+}
+
+.upper .profile_name span img {
+  @apply w-full max-w-[100px] h-auto rounded-full border-2;
+}
+
+.profile_name .full_name {
+  @apply text-sm space-y-2;
+}
+
+.general_details_wrapper .upper .user_tier {
+  @apply flex flex-col space-y-2 text-center text-sm px-8 py-5;
+}
+
+.general_details_wrapper .upper .user_tier span {
+  @apply flex space-x-2 justify-center;
+}
+
+.general_details_wrapper .upper .amount {
+  @apply text-center justify-center px-8 py-5;
+}
+
+.upper .amount p {
+  @apply text-xs;
+}
+
+.general_details_wrapper .below {
+  @apply flex justify-between w-full text-[rgba(0,0,0,0.8)];
+  @apply text-base font-medium text-center space-x-4 w-full;
+}
+
+.general_details_wrapper .below > span {
+  @apply hover:border-b-2 border-gray-300 w-full cursor-pointer pb-1;
+}
+
+.general_details_wrapper .below > span:first-child {
+  @apply border-b-2 border-color2 text-color2;
+}
+
+/* **************************************************************** */
+/* ******************** Personalnfo Component ********************** */
+/* **************************************************************** */
+
+.personal_info_wrapper {
+  @apply bg-bgColor rounded mt-[2%] px-7 py-5 overflow-x-auto;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+}
+
+.personal_info_wrapper > div {
+  @apply w-full text-left border-b border-gray-200 py-6;
+}
+
+.personal_info_wrapper > div:last-child {
+  @apply border-none;
+}
+
+.personal_info_wrapper > div h3 {
+  @apply font-semibold text-base mb-4;
+}
+
+.personal_info_wrapper > div p {
+  @apply font-normal text-xs uppercase;
+}
+
+.personal_info_wrapper > div h2 {
+  @apply font-semibold text-base text-color8;
+}
+
+.personal_info_wrapper .inner_wrapper {
+  @apply flex flex-row flex-wrap w-full justify-start;
+}
+
+.personal_info_wrapper .inner_wrapper span {
+  @apply whitespace-nowrap w-fit text-left space-y-1 py-4 mr-12;
+  /* @apply border border-red-500; */
+  @apply flex-shrink-0 flex-grow-0 basis-full md:basis-[15%];
+}
+
+.gurantor_wrapper {
+  @apply flex flex-col space-y-3;
+}
+
+.gurantor_wrapper div {
+  @apply flex flex-row flex-wrap w-full justify-start py-4 border-b border-gray-200;
+}
+
+.gurantor_wrapper div:last-child {
+  @apply border-none;
+}
+
+.gurantor_wrapper div span {
+  @apply whitespace-nowrap w-fit text-left space-y-1 py-4 mr-12;
+  @apply flex-shrink-0 flex-grow-0 basis-full md:basis-[15%];
+}
