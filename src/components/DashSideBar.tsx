@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import Businesses from "./Businesses";
 import Customers from "./Customers";
 import Settings from "./Settings";
 
 const DashSideBar = (): JSX.Element => {
+  const navigate = useNavigate();
+
   return (
     <aside className="dash_sidebar_wrapper">
       <span className="switch_organisation">
@@ -23,6 +26,13 @@ const DashSideBar = (): JSX.Element => {
       <Customers />
       <Businesses />
       <Settings />
+      <div className="logout" onClick={() => navigate("/", { replace: true })}>
+        <span>
+          <img src="../assets/svg/sign-out.svg" alt="signout" />
+        </span>
+        <h3>Logout</h3>
+      </div>
+      <h2 className="version">v1.2.0</h2>
     </aside>
   );
 };
