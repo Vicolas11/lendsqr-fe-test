@@ -4,7 +4,7 @@ import LogoutModal from "../components/LogoutModal";
 import DashSideBar from "../components/DashSideBar";
 import DashHeader from "../components/DashHeader";
 import DashMain from "../components/DashMain";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 import "../styles/Dashboard.css";
 
 const Dashboard = (): JSX.Element => {
@@ -16,7 +16,7 @@ const Dashboard = (): JSX.Element => {
   }, []);
 
   return (
-    <div>
+    <Fragment>
       <DashHeader />
       {logoutModal && <LogoutModal show={logoutModal} />}
       <MobileDashSideBar show={sideBarModal} />
@@ -24,7 +24,7 @@ const Dashboard = (): JSX.Element => {
         <DashSideBar />
         <DashMain />
       </div>
-    </div>
+    </Fragment>
   );
 };
 
