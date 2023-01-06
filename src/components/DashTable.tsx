@@ -1,5 +1,7 @@
 import { userStatus } from "../utils/userstatus.util";
+import { SlOptionsVertical } from "react-icons/sl";
 import { dashData } from "../utils/dashdata.util";
+import UserOptionModal from "./UserOptionModal";
 import { MdFilterList } from "react-icons/md";
 import FilterDropDown from "./FilterDropDown";
 import Pagination from "./Pagination";
@@ -38,7 +40,7 @@ const DashTable = (): JSX.Element => {
               ))}
             </tr>
           </thead>
-          <tbody>
+          <tbody className="table_body">
             {tableData?.map((item, idx) => (
               <tr key={`${idx}`} className="dash_table_row">
                 <td>{item?.organisation}</td>
@@ -47,6 +49,10 @@ const DashTable = (): JSX.Element => {
                 <td>{item?.phone}</td>
                 <td>{item?.date}</td>
                 {userStatus({ status: item?.status })}
+                <td id="table_body_td" className="relative">
+                  <SlOptionsVertical className="option_icon" />
+                  <UserOptionModal />
+                </td>
               </tr>
             ))}
           </tbody>
