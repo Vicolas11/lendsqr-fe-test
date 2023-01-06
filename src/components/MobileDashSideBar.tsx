@@ -3,6 +3,7 @@ import { ModalProps } from "../../interfaces/modal.interface";
 import { CSSTransition } from "react-transition-group";
 import { useAppDispatch } from "../hooks/store.hook";
 import animate from "../styles/Animation.module.css";
+import { useNavigate } from "react-router-dom";
 import { MdClose } from "react-icons/md";
 import { Fragment, useRef } from "react";
 import { Link } from "react-router-dom";
@@ -13,6 +14,7 @@ import Settings from "./Settings";
 
 const MobileDashSideBar = ({ show }: ModalProps): JSX.Element => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const nodeRef = useRef(null);
 
   return (
@@ -57,6 +59,16 @@ const MobileDashSideBar = ({ show }: ModalProps): JSX.Element => {
           <Customers />
           <Businesses />
           <Settings />
+          <div
+            className="logout"
+            onClick={() => navigate("/", { replace: true })}
+          >
+            <span>
+              <img src="../assets/svg/sign-out.svg" alt="signout" />
+            </span>
+            <h3>Logout</h3>
+          </div>
+          <h2 className="version">v1.2.0</h2>
         </aside>
       </CSSTransition>
     </Fragment>
