@@ -3,6 +3,7 @@ import { PersistGate } from "redux-persist/integration/react";
 import store, { persistor } from "./store/store";
 import reportWebVitals from "./reportWebVitals";
 import PageNotFound from "./pages/PageNotFound";
+import UserProfile from "./pages/UserProfile";
 import Dashboard from "./pages/Dashboard";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
   {
     path: "/dashboard",
     element: <Dashboard />,
+  },
+  {
+    path: "/profile",
+    element: <UserProfile />,
   },
 ]);
 
