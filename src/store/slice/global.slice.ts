@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   logoutModal: false,
   sideBarModal: false,
+  userOption: false,
+  userId: ''
 };
 
 const globalSlice = createSlice({
@@ -21,6 +23,15 @@ const globalSlice = createSlice({
     hideSideBarModal: (state) => {
       state.sideBarModal = false;
     },
+    toggleUserOption: (state) => {
+      state.userOption = !state.userOption;
+    },
+    hideUserOption: (state) => {
+      state.userOption = false;
+    },
+    setUserId: (state, { payload }) => {
+      state.userId = payload;
+    }
   },
 });
 
@@ -29,6 +40,9 @@ export const {
   hideLogoutModal,
   showSideBarModal,
   hideSideBarModal,
+  toggleUserOption,
+  hideUserOption,
+  setUserId
 } = globalSlice.actions;
 
 export default globalSlice.reducer;
