@@ -11,7 +11,7 @@ const LoginPage = (): JSX.Element => {
   return (
     <div className={styles.login_page_wrapper}>
       <div className={styles.logo}>
-        <Link to={"/login"}>
+        <Link to={"/"}>
           <img src="../assets/svg/logo.svg" alt="Logo" />
         </Link>
       </div>

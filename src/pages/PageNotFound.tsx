@@ -13,11 +13,10 @@ const PageNotFound = (): JSX.Element => {
       <h1>Page Not Found!</h1>
       <p>
         We're sorry, the page you required could not be found.
-        <br />
         Please go back to the login page.
       </p>
       <button>
-        <Link to={`/login`}>Goto Login</Link>
+        <Link to={`/`}>Goto Login</Link>
       </button>
     </div>
   );

@@ -1,15 +1,25 @@
 import styles from "../styles/UserProfile.module.scss";
+import { useAppSelector } from "../hooks/store.hook";
 
 const GeneralDetails = (): JSX.Element => {
+  const userId = useAppSelector((state) => state.global.userId);
+  const userDataArr = useAppSelector((state) => state.userData.data);
+  const fetchedData = userDataArr.find((item) => item.id === userId);
+  const { profile, accountBalance, accountNumber } = fetchedData;
+  const { firstName, lastName, avatar } = profile;
+
   return (
     <div className={styles.general_details_wrapper}>
       <div className={styles.upper}>
         <div className={styles.profile_name}>
           <span>
-            <img src="../assets/svg/profile-avatar.svg" alt="avatar" />
+            <img
+              src={avatar ? avatar : `../assets/svg/profile-avatar.svg`}
+              alt="avatar"
+            />
           </span>
           <span className={styles.full_name}>
-            <h1>Grace Effiom</h1>
+            <h1>{`${firstName} ${lastName}`}</h1>
             <p>LSQFf587g9O</p>
           </span>
         </div>
@@ -22,8 +32,8 @@ const GeneralDetails = (): JSX.Element => {
           </span>
         </div>
         <div className={styles.amount}>
-          <h1>₦200,000.00</h1>
-          <p>991235678/Providus Bank</p>
+          <h1>₦{accountNumber}</h1>
+          <p>{accountBalance}/Providus Bank</p>
         </div>
       </div>
       <div className={styles.below}>
