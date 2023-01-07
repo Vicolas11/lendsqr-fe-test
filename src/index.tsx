@@ -8,8 +8,8 @@ import Dashboard from "./pages/Dashboard";
 import ReactDOM from "react-dom/client";
 import { Provider } from "react-redux";
 import LoginPage from "./pages/Login";
-import React from "react";
 import "./styles/index.scss";
+import React from "react";
 
 const router = createBrowserRouter([
   {
