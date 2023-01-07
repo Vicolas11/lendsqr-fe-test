@@ -6,6 +6,7 @@ import { errorToastStyle } from "../utils/toaststyles.util";
 import { getUserData } from "../store/slice/userdata.slice";
 import { userStatusRand } from "../utils/duplicate.util";
 import { userStatus } from "../utils/userstatus.util";
+import { formatDate } from "../utils/formatime.util";
 import styles from "../styles/Dashboard.module.scss";
 import constants from "../config/constants.config";
 import { SlOptionsVertical } from "react-icons/sl";
@@ -15,11 +16,7 @@ import UserOptionModal from "./UserOptionModal";
 import { MdFilterList } from "react-icons/md";
 import FilterDropDown from "./FilterDropDown";
 import Pagination from "./Pagination";
-
-
 import Loader from "./Loader";
-
-import { formatDate } from "../utils/formatime.util";
 
 const DashTable = (): JSX.Element => {
   const userOption = useAppSelector((state) => state.global.userOption);
