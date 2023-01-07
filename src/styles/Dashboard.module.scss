@@ -358,7 +358,7 @@
 
 .dash_table_wrapper {
   @apply bg-bgColor mt-[5%] font-normal overflow-x-scroll;
-  @apply rounded w-full px-6 py-4 text-sm text-color7;
+  @apply rounded w-full px-6 py-4 text-sm text-color7 relative;
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
 }
@@ -408,13 +408,17 @@
 }
 
 .pagination_wrapper .left span {
-  @apply flex space-x-2 items-center bg-color9;
-  @apply rounded font-semibold py-1 px-2;
+  @apply flex justify-center items-center bg-color9;
+  @apply rounded font-semibold py-1 pl-5;
 }
 
-.pagination_wrapper .right span {
-  @apply bg-color9 hover:bg-color2;
-  @apply flex items-center rounded cursor-pointer p-2;
+.pagination_wrapper .left span section {
+  @apply border-none outline-none focus:border-none active:border-none;
+}
+
+.pagination_wrapper .right button {
+  @apply bg-color9 hover:bg-color2 disabled:hover:bg-gray-100;
+  @apply flex items-center rounded cursor-pointer p-2 disabled:hover:cursor-not-allowed;
 }
 
 .pagination_wrapper .right h3 {
@@ -422,7 +426,7 @@
   @apply hover:font-semibold;
 }
 
-.pagination_wrapper .right span img {
+.pagination_wrapper .right button img {
   @apply w-full max-w-[6.57px] h-auto;
 }
 
@@ -432,7 +436,7 @@
 
 .filter_dropdown_wrapper {
   @apply hidden absolute top-[30px] left-0 md:min-w-[270px] px-4 py-6;
-  @apply bg-bgColor rounded m-0;
+  @apply bg-bgColor rounded m-0 z-20;
   border: 1px solid rgba(84, 95, 125, 0.14);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
 }
@@ -492,7 +496,7 @@
 /* ******************** UserOptionModal Component ************************* */
 /* *********************************************************************** */
 .user_option_modal {
-  @apply hidden absolute lg:min-w-[180px] top-0 right-0 rounded bg-bgColor;
+  @apply absolute lg:min-w-[180px] top-0 right-0 rounded bg-bgColor;
   @apply text-color8 font-semibold z-30;
   border: 1px solid rgba(84, 95, 125, 0.04);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
@@ -519,8 +523,11 @@
   @apply w-5 h-5 cursor-pointer;
 }
 
-.option_icon:hover ~ .user_option_modal {
-  @apply block;
+// .option_icon:hover ~ .user_option_modal {
+//   @apply block;
+// }
+.table_body {
+  @apply relative;
 }
 
 .table_body > tr:nth-last-child(2) > td:last-child:hover .user_option_modal {
