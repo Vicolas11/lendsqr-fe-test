@@ -53,7 +53,6 @@ const DashTable = (): JSX.Element => {
 
   const onOptionClick = ({ idx, id }: { idx: number; id: string }) => {
     setTop(idx);
-    console.log("ID ==>", id);
     dispatch(setUserId(id));
     dispatch(toggleUserOption());
   };
@@ -86,14 +85,12 @@ const DashTable = (): JSX.Element => {
         const data = json as MockAPIDataType[];
         setTotalNumOfUsers(data.length);
         dispatch(getUserData(data));
-        // console.log(newData);
         setIsLoading(false);
       })
       .catch((err) => {
         // const errMsg = response?.data?.errors[0];
         setHasError({ msg: err?.message, status: true });
         setIsLoading(false);
-        console.log("err => ", err.message);
         toast.error(err?.message, errorToastStyle);
       });
     // }
@@ -129,8 +126,6 @@ const DashTable = (): JSX.Element => {
   useEffect(() => {
     setNewUserDataArr(slicedUserData(currentPageNum));
   }, [currentPageNum]);
-
-  console.log(newUserDataArr);
 
   return (
     <Fragment>
