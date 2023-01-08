@@ -1,11 +1,7 @@
 export const dashData = [
   {
     customers: [
-<<<<<<< HEAD
-      { id: 1, title: "Users", icon: "Users.svg", alt: "users" },
-=======
       { id: 1, title: "Users", icon: "Users.svg", alt: "Users" },
->>>>>>> 1ccbf6a28b78dbc37f2eb9de311baf38c2a916e8
       { id: 2, title: "Guarantors", icon: "guarantors.svg", alt: "guarantors" },
       { id: 3, title: "Loans", icon: "sack.svg", alt: "sack" },
       {
