@@ -1,6 +1,6 @@
 import { PaginationProps } from "../../interfaces/paginate.interface";
 import styles from "../styles/Dashboard.module.scss";
-import { forwardRef, useEffect, useState } from "react";
+import React, { forwardRef, useEffect, useState } from "react";
 
 const Pagination = (props: PaginationProps): JSX.Element => {
   const { maxNumOfPages, currentPageNum, increasePageNum, decreasePageNum } =
@@ -10,6 +10,10 @@ const Pagination = (props: PaginationProps): JSX.Element => {
   const isPrevPage = currentPageNum <= 1;
   const arrLen = selectNumArr.length;
   let arrayOfNum:number[] = [];
+
+  const onSelectHandler = (evt: React.ChangeEvent<HTMLSelectElement>) => {
+    console.log("value ==>", evt.target.value)
+  };
 
   useEffect(() => {
     for (let i = 1; i <= maxNumOfPages; i++) {      
@@ -29,7 +33,7 @@ const Pagination = (props: PaginationProps): JSX.Element => {
       <div className={styles.left}>
         <h1>Showing</h1>
         <span>
-          <select name="org" id="org">
+          <select name="org" id="org" onChange={() => onSelectHandler}>
             {selectNumArr.map((num, idx) => (
               <option key={`${idx}`} value={`${num}`}>
                 {num}

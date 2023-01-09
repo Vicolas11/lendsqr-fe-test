@@ -1,6 +1,6 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import styles from "../styles/LoginPage.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const LoginForm = (): JSX.Element => {
   const [textInput, setTextInput] = useState({ email: "", password: "" });
@@ -9,6 +9,7 @@ const LoginForm = (): JSX.Element => {
     email: false,
     password: false,
   });
+  const navigate = useNavigate();
 
   const onEmailChangeHandler = (evt: ChangeEvent<HTMLInputElement>) => {
     // Input value
@@ -54,6 +55,7 @@ const LoginForm = (): JSX.Element => {
       setShowErrMsg((prev) => ({ email: prev.password, password: true }));
       return;
     }
+    navigate("/dashboard", { replace: true });
   };
 
   return (
@@ -62,10 +64,16 @@ const LoginForm = (): JSX.Element => {
         <h1>Welcome!</h1>
         <p>Enter details to login.</p>
       </div>
-      <form className={styles.login_form} method="POST" onSubmit={onSubmitHandler}>
+      <form
+        className={styles.login_form}
+        method="POST"
+        onSubmit={onSubmitHandler}
+      >
         <div className={styles.email_input_wrapper}>
           <input
-            className={showErrMsg.email ?  styles.errorInputStyle : styles.inputStyle}
+            className={
+              showErrMsg.email ? styles.errorInputStyle : styles.inputStyle
+            }
             type="email"
             id="email"
             name="email"
@@ -83,7 +91,9 @@ const LoginForm = (): JSX.Element => {
             {showPassword ? "HIDE" : "SHOW"}
           </label>
           <input
-            className={showErrMsg.password ? styles.errorInputStyle : styles.inputStyle}
+            className={
+              showErrMsg.password ? styles.errorInputStyle : styles.inputStyle
+            }
             type={showPassword ? "text" : "password"}
             id="password"
             name="password"
@@ -91,7 +101,9 @@ const LoginForm = (): JSX.Element => {
             value={textInput.password}
             onChange={onPasswordChangeHandler}
           />
-          {showErrMsg.password && <p className={styles.errMsg}>Enter Password</p>}
+          {showErrMsg.password && (
+            <p className={styles.errMsg}>Enter Password</p>
+          )}
         </div>
         <h2 className={styles.forgetPassword}>
           <Link to={"/login"}>FORGET PASSWORD?</Link>
