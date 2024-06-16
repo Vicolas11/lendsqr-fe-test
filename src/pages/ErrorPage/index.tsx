@@ -1,17 +1,17 @@
 import { useRouteError, ErrorResponse, useNavigate } from "react-router-dom";
 import CustomButton from "../../components/common/CustomButton";
 import styles from "./styles.module.scss";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 
 export default function ErrorPage() {
   const { status, statusText, data } = useRouteError() as ErrorResponse;
   const navigate = useNavigate();
 
-  useEffect(() => {
-    document.title = `BlackGuard | ${status === 404 ? "Not Found" : "Error"}`;
+  useLayoutEffect(() => {
+    document.title = `Lendsqr | ${status === 404 ? "Not Found" : "Error"}`;
 
     return () => {
-      document.title = "BlackGuard";
+      document.title = "Lendsqr";
     };
   }, [status]);
 

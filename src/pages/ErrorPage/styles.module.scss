@@ -2,7 +2,7 @@
   @apply flex justify-center items-center w-full h-screen bg-bgColor;
 
   .content {
-    @apply text-center text-lg;
+    @apply text-center text-lg text-color1;
 
     h1 {
       @apply font-bold text-3xl;
