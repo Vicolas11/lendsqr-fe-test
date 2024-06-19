@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
+import PrivateRouter from "./privateRouter";
 import ErrorPage from "../pages/ErrorPage";
 import LoginPage from "../pages/LoginPage";
-import PrivateRouter from "./privateRouter";
+import Dashboard from "../pages/Dashboard";
 
 export const router = createBrowserRouter([
   { path: "/", element: <LoginPage />, errorElement: <ErrorPage /> },
@@ -12,7 +13,7 @@ export const router = createBrowserRouter([
         path: "",
         element: (
           <PrivateRouter>
-            <div></div>
+            <Dashboard />
           </PrivateRouter>
         ),
       },
