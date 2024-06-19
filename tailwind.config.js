@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        custom: ["AvenirBold", "AvenirRegular"],
+        avenir: ["AvenirBold", "AvenirRegular"],
         roboto: ["Roboto", "sans-serif"],
-        worksans: ["Work+Sans"],
+        worksans: ["Work Sans"],
       },
       colors: {
         bgColor: "#ffffff",
@@ -24,6 +24,7 @@ export default {
         color9: "#213f7d1a",
         colorX: "#545f7d26",
         colorXI: "#e4033b",
+        colorXII: "#e9ecf2"
       },
     },
     screens: {
