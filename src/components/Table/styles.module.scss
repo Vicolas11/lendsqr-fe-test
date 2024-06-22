@@ -4,6 +4,26 @@
   border: 1px solid rgba(33, 63, 125, 0.06);
   box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
 
+  .hasError {
+    @apply text-red-600 font-medium text-base py-4 text-center;
+  }
+
+  .notFound {
+    @apply text-gray-500 font-medium text-base py-4 text-center;
+  }
+
+  .goBack {
+    @apply flex gap-x-3 w-fit items-center text-base py-2;
+
+    span {
+      @apply cursor-pointer w-6 h-auto;
+    }
+
+    .result {
+      @apply font-semibold;
+    }
+  }
+
   table {
     @apply w-full text-sm text-left;
 
