@@ -1,29 +1,47 @@
 export interface IMockAPIData {
-  createdAt: string;
-  orgName: string;
-  userName: string;
-  email: string;
-  phoneNumber: string;
-  lastActiveDate: string;
+  id: string;
+  userTier: number;
   profile: {
     firstName: string;
     lastName: string;
+    lendsqrId: string;
+    organization: string;
+    username: string;
+    email: string;
+    status: string;
+    gender: string;
     phoneNumber: string;
     avatar: string;
-    gender: string;
-    bvn: string;
-    address: string;
+    createdAt: string;
+  };
+  maritalDetails: {
+    maritalStatus: string;
+    children: number;
+    typeOfResidence: string;
+  };
+  bankDetails: {
     currency: string;
+    bank: string;
+    accountNumber: string;
+    accountBalance: number;
+    bvn: string;
   };
-  guarantor: {
-    firstName: string;
-    lastName: string;
-    phoneNumber: string;
-    gender: string;
-    address: string;
-  };
-  accountBalance: string;
-  accountNumber: string;
+  guarantor: [
+    {
+      firstName: string;
+      lastName: string;
+      phoneNumber: string;
+      email: string;
+      relationship: string;
+    },
+    {
+      firstName: string;
+      lastName: string;
+      phoneNumber: string;
+      email: string;
+      relationship: string;
+    }
+  ];
   socials: {
     facebook: string;
     instagram: string;
@@ -35,9 +53,7 @@ export interface IMockAPIData {
     sector: string;
     duration: string;
     officeEmail: string;
-    monthlyIncome: string[];
     loanRepayment: string;
+    monthlyIncome: number[];
   };
-  id: string;
-  status: string;
 }
