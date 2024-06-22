@@ -1,4 +1,4 @@
-import { IUserData, IUserDataAlt } from "../../interfaces/userdata.interface";
+import { IUserData, IUserDataAlt } from "../interfaces/userdata.interface";
 
 export const userData: (IUserData | IUserDataAlt)[] = [
   {
