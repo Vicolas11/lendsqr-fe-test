@@ -1,17 +1,55 @@
+import { useAppDispatch, useAppSelector } from "../../hooks/store.hook";
 import { DropdownModalProps } from "../../interfaces/props.interfaces";
+import { setUserFilterData } from "../../store/slice/userdata.slice";
+import { useRef, MouseEvent, useState, ChangeEvent } from "react";
+import { IInputValue } from "../../interfaces/status.interface";
+import { filteredData } from "../../utils/filterdata.util";
 import { dropdownInput } from "../../data/dashboardData";
-import { useRef, MouseEvent } from "react";
+import { useSearchParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 
 export default function FilterDropDownModal({
   arrayLen,
   index,
+  close,
 }: DropdownModalProps): JSX.Element {
+  const userDataArr = useAppSelector((state) => state.userData.data);
   const inputRef = useRef<HTMLInputElement>(null);
+  const setSearchParams = useSearchParams()[1];
+  const dispatch = useAppDispatch();
+  const [inputValue, setInputValue] = useState<IInputValue>({
+    organization: "",
+    email: "",
+    username: "",
+    phone: "",
+    status: "",
+    date: "",
+  });
+
+  const handleOnChange = (
+    evt: ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { value, name } = evt.target;
+    setInputValue((previousValue) => ({ ...previousValue, [name]: value }));
+  };
+
+  const handleOnFilter = () => {
+    const filteredDataArr = filteredData({ data: userDataArr, ...inputValue });
+    dispatch(setUserFilterData(filteredDataArr));
+    setSearchParams({ isFilter: "true" });
+    close && close();
+  };
+
+  const handleOnReset = () => {
+    const entryArr = Object.keys(inputValue).map((d) => [d, ""]);
+    setInputValue(Object.fromEntries(entryArr));
+  };
 
   const handleModalClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
+
+  const disabled = Object.values(inputValue).every((val) => val === "");
 
   return (
     <div
@@ -22,8 +60,13 @@ export default function FilterDropDownModal({
     >
       <form>
         <div className={styles.selectWrapper}>
-          <label htmlFor="org">Organisation</label>
-          <select name="org" id="org">
+          <label htmlFor="organization">Organisation</label>
+          <select
+            name="organization"
+            id="organization"
+            value={inputValue.organization}
+            onChange={handleOnChange}
+          >
             <option value="" className={styles.first}>
               Select
             </option>
@@ -54,12 +97,19 @@ export default function FilterDropDownModal({
                     }
                   : () => {}
               }
+              value={inputValue[name]}
+              onChange={handleOnChange}
             />
           </div>
         ))}
         <div className={styles.selectWrapper}>
           <label htmlFor="status">Status</label>
-          <select name="status" id="status">
+          <select
+            name="status"
+            id="status"
+            value={inputValue.status}
+            onChange={handleOnChange}
+          >
             <option value="">Select</option>
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
@@ -68,8 +118,22 @@ export default function FilterDropDownModal({
           </select>
         </div>
         <div className={styles.btnWrapper}>
-          <button className={styles.resetBtn}>Reset</button>
-          <button className={styles.filterBtn}>Filter</button>
+          <button
+            type="button"
+            disabled={disabled}
+            className={styles.resetBtn}
+            onClick={handleOnReset}
+          >
+            Reset
+          </button>
+          <button
+            type="button"
+            disabled={disabled}
+            className={styles.filterBtn}
+            onClick={handleOnFilter}
+          >
+            Filter
+          </button>
         </div>
       </form>
     </div>

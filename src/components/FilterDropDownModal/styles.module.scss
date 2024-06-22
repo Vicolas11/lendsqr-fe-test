@@ -48,17 +48,19 @@
 
     button {
       @apply text-sm font-semibold border w-full max-w-[6.125rem] h-[2.5rem];
-      @apply px-4 py-2 rounded-lg;
+      @apply px-4 py-2 rounded-lg disabled:cursor-not-allowed disabled:opacity-40;      
     }
 
     .resetBtn {
       @apply text-color8 border-color8;
       @apply hover:bg-color8 hover:text-bgColor;
+      @apply disabled:hover:bg-transparent disabled:hover:text-color8;
     }
 
     .filterBtn {
       @apply bg-color2 border-color2 text-bgColor;
       @apply hover:bg-color3 hover:border-color3;
+      @apply disabled:hover:bg-color2;
     }
   }
 }
