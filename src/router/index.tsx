@@ -1,4 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
+import UserDetailsPage from "../pages/UserDetailsPage";
 import PrivateRouter from "./privateRouter";
 import ErrorPage from "../pages/ErrorPage";
 import LoginPage from "../pages/LoginPage";
@@ -14,6 +15,14 @@ export const router = createBrowserRouter([
         element: (
           <PrivateRouter>
             <Dashboard />
+          </PrivateRouter>
+        ),
+      },
+      {
+        path: ":username",
+        element: (
+          <PrivateRouter>
+            <UserDetailsPage />
           </PrivateRouter>
         ),
       },
