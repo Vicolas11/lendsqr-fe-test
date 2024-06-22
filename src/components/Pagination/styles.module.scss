@@ -21,10 +21,10 @@
   }
 
   .right {
-    @apply flex justify-center md:justify-end space-x-3 items-center;
+    @apply flex justify-center md:justify-end gap-x-3 items-center;
     @apply text-color7 text-base font-normal w-full;
 
-    button {
+    .nextBtn, .prevBtn {
       @apply bg-color9 hover:bg-color2 disabled:hover:bg-gray-100;
       @apply flex items-center rounded cursor-pointer lit:p-1 p-2 disabled:hover:cursor-not-allowed;
       @apply disabled:bg-slate-300 disabled:cursor-not-allowed;
@@ -34,13 +34,12 @@
       }
     }
 
-    h3 {
-      @apply cursor-pointer hover:text-color1;
+    .btnPaginate {
       @apply hover:text-color8;
     }
 
-    h3.active {
-      @apply font-medium;
+    .active {
+      @apply text-color1 font-semibold;
     }
   }
 }
