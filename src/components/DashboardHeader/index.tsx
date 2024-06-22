@@ -1,3 +1,10 @@
+import {
+  setSearchTerm,
+  setUserFilterData,
+} from "../../store/slice/userdata.slice";
+import { useAppDispatch, useAppSelector } from "../../hooks/store.hook";
+import { ChangeEvent, KeyboardEvent, useState } from "react";
+import { searchData } from "../../utils/searchdata.util";
 import { Link, useSearchParams } from "react-router-dom";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import styles from "./styles.module.scss";
@@ -11,7 +18,29 @@ import {
 } from "../../assets";
 
 export default function DashboardHeader(): JSX.Element {
+  const userDataArr = useAppSelector((state) => state.userData.data);
+  const [searchValue, setSearchValue] = useState("");
   const setSearchParam = useSearchParams()[1];
+  const dispatch = useAppDispatch();
+
+  const handleOnChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(evt.target.value);
+  };
+
+  const handleOnSearch = () => {
+    if (searchValue === "") return;
+    const filteredDataArr = searchData(userDataArr, searchValue);
+    dispatch(setUserFilterData(filteredDataArr));
+    dispatch(setSearchTerm(searchValue));
+    setSearchValue("");
+    setSearchParam({ isSearch: "true" });
+  };
+
+  const handleOnKeyDown = (evt: KeyboardEvent<HTMLInputElement>) => {
+    if (evt.key === "Enter") {
+      handleOnSearch();
+    }
+  };
 
   return (
     <header className={styles.dashHeaderWrapper}>
@@ -28,8 +57,14 @@ export default function DashboardHeader(): JSX.Element {
           >
             <HiOutlineMenuAlt2 className={styles.icon} />
           </button>
-          <input type="text" placeholder="Search for anything" />
-          <div>
+          <input
+            type="text"
+            value={searchValue}
+            onChange={handleOnChange}
+            onKeyDown={handleOnKeyDown}
+            placeholder="Search for anything"
+          />
+          <div onClick={handleOnSearch}>
             <img src={searchIcon} alt="Search" />
           </div>
         </div>
