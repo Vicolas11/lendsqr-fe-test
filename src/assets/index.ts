@@ -32,6 +32,7 @@ import searchIcon from "./icons/search.svg";
 import signoutIcon from "./icons/sign-out.svg";
 import slidersIcon from "./icons/sliders.svg";
 import starFillIcon from "./icons/star-fill.svg";
+import starOutlineFillIcon from "./icons/star-outline.svg";
 import tireIcon from "./icons/tire.svg";
 import transactIcon from "./icons/transact.svg";
 import userCheckIcon from "./icons/user-check.svg";
@@ -80,6 +81,7 @@ export {
   signoutIcon,
   slidersIcon,
   starFillIcon,
+  starOutlineFillIcon,
   tireIcon,
   transactIcon,
   userCheckIcon,
