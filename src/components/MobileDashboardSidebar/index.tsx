@@ -1,16 +1,17 @@
-import { Props } from "../../interfaces/props.interfaces";
+import { resetUserData } from "../../store/slice/userdata.slice";
 import { useLocation, useNavigate } from "react-router-dom";
+import { Props } from "../../interfaces/props.interfaces";
 import { setIsAuth } from "../../store/slice/auth.slice";
 import { useAppDispatch } from "../../hooks/store.hook";
 import animate from "../../styles/Animation.module.css";
 import { CSSTransition } from "react-transition-group";
-import Businesses from "../Businesses";
-import Customers from "../Customers";
 import BackBlurDrop from "../BlackBlurDrop";
-import Settings from "../Settings";
 import styles from "./styles.module.scss";
 import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
+import Businesses from "../Businesses";
+import Customers from "../Customers";
+import Settings from "../Settings";
 import { useRef } from "react";
 import {
   briefcaseIcon,
@@ -74,6 +75,7 @@ export default function MobileDashboardSideBar({ show }: Props): JSX.Element {
               className={styles.logout}
               onClick={() => {
                 dispatch(setIsAuth(false));
+                dispatch(resetUserData());
                 navigate("/", { replace: true });
               }}
             >

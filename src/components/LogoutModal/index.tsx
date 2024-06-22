@@ -1,3 +1,4 @@
+import { resetUserData } from "../../store/slice/userdata.slice";
 import { avatar, lendsqrLogo, signoutIcon } from "../../assets";
 import { useLocation, useNavigate } from "react-router-dom";
 import { Props } from "../../interfaces/props.interfaces";
@@ -51,6 +52,7 @@ export default function LogoutModal({ show }: Props): JSX.Element {
           className={styles.logout}
           onClick={() => {
             dispatch(setIsAuth(false));
+            dispatch(resetUserData());
             navigate("/", { replace: true });
           }}
         >

@@ -31,6 +31,11 @@ const userDataSlice = createSlice({
     },
     resetUserData: (state) => {
       state.data = [];
+      state.filteredData = [];
+      state.totalUsers = 0;
+      state.totalPages = 0;
+      state.searchTerm = "";
+      state.hasFetched = true;
     },
     setTotalUsers: (state, { payload }: PayloadAction<number>) => {
       state.totalUsers = payload;

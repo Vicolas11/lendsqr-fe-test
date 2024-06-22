@@ -1,3 +1,4 @@
+import { resetUserData } from "../../store/slice/userdata.slice";
 import styles from "../DashboardHeader/styles.module.scss";
 import { setIsAuth } from "../../store/slice/auth.slice";
 import { useAppDispatch } from "../../hooks/store.hook";
@@ -13,6 +14,7 @@ export default function Logout(): JSX.Element {
       className={styles.desktopLogout}
       onClick={() => {
         dispatch(setIsAuth(false));
+        dispatch(resetUserData());
         navigate("/", { replace: true });
       }}
     >

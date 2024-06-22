@@ -3,7 +3,7 @@ import PersonalInformation from "../../components/PersonalInformation";
 import GeneralUserDetails from "../../components/GeneralUserDetails";
 import { useAppSelector } from "../../hooks/store.hook";
 import { useParams } from "react-router-dom";
-import DashboardLayout from "../../Layout";
+import DashboardLayout from "../../layout";
 import styles from "./styles.module.scss";
 
 export default function UserDetailsPage() {

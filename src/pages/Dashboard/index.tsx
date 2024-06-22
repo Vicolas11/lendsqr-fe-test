@@ -1,5 +1,5 @@
 import DashboardMain from "../../components/DashboardMain";
-import DashboardLayout from "../../Layout";
+import DashboardLayout from "../../layout";
 
 export default function Dashboard() {
   return (

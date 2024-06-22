@@ -1,3 +1,6 @@
+import { resetUserData } from "../../store/slice/userdata.slice";
+import { setIsAuth } from "../../store/slice/auth.slice";
+import { useAppDispatch } from "../../hooks/store.hook";
 import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 import Businesses from "../Businesses";
@@ -12,6 +15,7 @@ import {
 
 export default function DashboardSidebar(): JSX.Element {
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   return (
     <aside className={styles.dashboardSidebarWrapper}>
@@ -39,7 +43,11 @@ export default function DashboardSidebar(): JSX.Element {
       <Settings />
       <div
         className={styles.logout}
-        onClick={() => navigate("/", { replace: true })}
+        onClick={() => {
+          dispatch(setIsAuth(false));
+          dispatch(resetUserData());
+          navigate("/", { replace: true });
+        }}
       >
         <span>
           <img src={signoutIcon} alt="signout" />
