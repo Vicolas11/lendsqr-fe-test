@@ -1,4 +1,5 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { IMockAPIData } from "./mockapi.interface";
 
 export interface PrivateRouterProps {
   children: ReactNode;
@@ -37,9 +38,15 @@ export interface LayoutProps {
 export interface DropdownModalProps {
   arrayLen: number;
   index: number;
+  close?: () => void;
 }
 
 export interface OptionModalProps {
   arrayLen: number;
   index: number;
+  username: string;
+}
+
+export interface UserDetailsProps {
+  userdetails: IMockAPIData;
 }
