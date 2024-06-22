@@ -24,6 +24,8 @@ import {
   usersLoanIcon,
   usersSaveIcon,
 } from "../assets";
+import { IMockAPIData } from "../interfaces/mockapi.interface";
+import { formatToMoney } from "../utils/formatmoney.utils";
 
 export const dashData = [
   {
@@ -197,7 +199,7 @@ export const dropdownInput = [
   {
     label: "Username",
     type: "text",
-    name: "user",
+    name: "username",
   },
   {
     label: "Email",
@@ -214,4 +216,93 @@ export const dropdownInput = [
     type: "tel",
     name: "phone",
   },
+];
+
+export const navTitle = [
+  "General Details",
+  "Documents",
+  "Bank Details",
+  "Loans",
+  "Savings",
+  "App and System",
+];
+
+export const UserDataFunc = (userdetails: IMockAPIData) => {
+  const { profile, bankDetails, guarantor, socials, education } = userdetails;
+  const { firstName, lastName, phoneNumber, email, gender } = profile;
+  const { bvn, currency } = bankDetails;
+  const {
+    level,
+    employmentStatus,
+    sector,
+    duration,
+    officeEmail,
+    monthlyIncome,
+    loanRepayment,
+  } = education;
+  const { facebook, instagram, twitter } = socials;
+
+  return [
+    {
+      title: "Personal Information",
+      data: [
+        { subtitle: "full name", value: `${firstName} ${lastName}` },
+        { subtitle: "phone number", value: `${phoneNumber}` },
+        { subtitle: "email address", value: `${email}` },
+        { subtitle: "bvn", value: `${bvn}` },
+        { subtitle: "gender", value: `${gender}` },
+        { subtitle: "marital status", value: "Single" },
+        { subtitle: "children", value: "None" },
+        { subtitle: "type of residence", value: "Parent's Apartment" },
+      ],
+    },
+    {
+      title: "Educational and Employment",
+      data: [
+        { subtitle: "level of education", value: `${level}` },
+        { subtitle: "employment status", value: `${employmentStatus}` },
+        { subtitle: "sector of employment", value: `${sector}` },
+        { subtitle: "duration of employment", value: `${duration}` },
+        { subtitle: "office email", value: `${officeEmail}` },
+        {
+          subtitle: "monthly income",
+          value: `${currency}${formatToMoney(
+            monthlyIncome[0]
+          )} - ${currency}${formatToMoney(monthlyIncome[1])}`,
+        },
+        {
+          subtitle: "loan repayment",
+          value: `${formatToMoney(+loanRepayment)}`,
+        },
+      ],
+    },
+    {
+      title: "Socials",
+      data: [
+        { subtitle: "Twitter", value: `${twitter}` },
+        { subtitle: "facebook", value: `${facebook}` },
+        { subtitle: "instagram", value: `${instagram}` },
+      ],
+    },
+    {
+      title: "Guarantor",
+      data: guarantor.map((dt) => ({
+        gurantor: [
+          { subtitle: "full name", value: `${dt.firstName} ${dt.lastName}` },
+          { subtitle: "phone number", value: `${dt.phoneNumber}` },
+          { subtitle: "email address", value: `${dt.email}` },
+          { subtitle: "relationship", value: `${dt.relationship}` },
+        ],
+      })),
+    },
+  ];
+};
+
+export const columnTitle = [
+  "Organisation",
+  "Username",
+  "Email",
+  "Phone number",
+  "Date Joined",
+  "Status",
 ];
