@@ -1,21 +1,23 @@
 import { eyeIcon, userActionIcon, userDeleteIcon } from "../../assets";
 import { OptionModalProps } from "../../interfaces/props.interfaces";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 import { MouseEvent } from "react";
 
 export default function UserOptionModal({
   arrayLen,
   index,
+  username
 }: OptionModalProps): JSX.Element {
   const navigate = useNavigate();
+  const { pathname } = useLocation();
 
   const handleModalClick = (e: MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
   };
 
   const onClickHandler = () => {
-    navigate("/profile");
+    navigate(`${pathname}/${username}`);
   };
 
   return (
