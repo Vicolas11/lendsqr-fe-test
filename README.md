@@ -14,7 +14,7 @@
 - [Acknowledgments](#acknowledgments)
 
 ## Project Overview
-This project is a responsive dashboard application built using React, TypeScript, and SCSS. It includes several pages such as Login, Dashboard, User Page, and User Details Page, each designed to interact with a mock API and local storage for user data management [read more](https://docs.google.com/document/d/1G3pKi4uwbgFA0kfJJJh_5u1paEuCCldFHBCN3iZOLgw/edit?usp=sharing).
+This project is a responsive dashboard application built using React, TypeScript, and SCSS. It includes several pages such as Login, Dashboard, User Page, and User Details Page, each designed to interact with a mock API and local storage for user data management [read more](https://docs.google.com/document/d/1G3pKi4uwbgFA0kfJJJh_5u1paEuCCldFHBCN3iZOLgw/edit?usp=sharing). Here's a live [link](https://victor-akoh-lendsqr-fe-test.vercel.app/) to the application.
 
 ## Features
 - **Login Page**: Allows users to authenticate.
