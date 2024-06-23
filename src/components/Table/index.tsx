@@ -20,7 +20,6 @@ import styles from "./styles.module.scss";
 import Pagination from "../Pagination";
 import Loader from "../Loader";
 
-
 export default function Table(): JSX.Element {
   const {
     searchTerm,
@@ -87,7 +86,6 @@ export default function Table(): JSX.Element {
         dispatch(setTotalPage(data.totalPages));
         setIsLoading(false);
       } catch (error: any) {
-        console.error("Error fetching data:", error);
         setHasError({
           status: true,
           msg: error.message || "An error occurred!",
@@ -124,7 +122,7 @@ export default function Table(): JSX.Element {
   }, []);
 
   return (
-    <div className="relative">
+    <div className={styles.container}>
       <div className={styles.dashTableWrapper}>
         {isLoading ? (
           <Loader />
@@ -134,21 +132,25 @@ export default function Table(): JSX.Element {
           <h2 className={styles.notFound}>No Record Found!</h2>
         ) : (
           <>
-            {isFilter ||
-              (isSearch && (
-                <div className={styles.goBack}>
-                  <span onClick={() => navigate(`${pathname}?page=${page}`)}>
-                    <img src={arrowBackIcon} />
-                  </span>
-                  {isFilter && <h3>Showing filtered results...</h3>}
-                  {isSearch && (
-                    <h3>
-                      Search Result -{" "}
-                      <span className={styles.result}>{searchTerm}</span>
-                    </h3>
-                  )}
-                </div>
-              ))}
+            {!!isSearch && (
+              <div className={styles.goBack}>
+                <span onClick={() => navigate(`${pathname}?page=${page}`)}>
+                  <img src={arrowBackIcon} />
+                </span>
+                <h3>
+                  Search Result -{" "}
+                  <span className={styles.result}>{searchTerm}</span>
+                </h3>
+              </div>
+            )}
+            {!!isFilter && (
+              <div className={styles.goBack}>
+                <span onClick={() => navigate(`${pathname}?page=${page}`)}>
+                  <img src={arrowBackIcon} />
+                </span>
+                <h3>Showing filtered results...</h3>
+              </div>
+            )}
             <table ref={tableRef}>
               <thead>
                 <tr>
@@ -168,6 +170,7 @@ export default function Table(): JSX.Element {
                             arrayLen={columnTitle.length}
                             index={idx}
                             close={() => setClickedColumn(null)}
+                            isFilter={!!isFilter || !!isSearch}
                           />
                         )}
                       </div>
