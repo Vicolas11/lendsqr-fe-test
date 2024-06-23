@@ -7,6 +7,8 @@
 - [Tech Stack](#tech-stack)
 - [Mock API](#mock-api)
 - [Data Storage](#data-storage)
+- [Authentication and Authorization](#authentication-and-authorization)
+- [Unit Testing](#unit-testing)
 - [Folder Structure](#folder-structure)
 - [Deployment](#deployment)
 - [Acknowledgments](#acknowledgments)
@@ -54,6 +56,19 @@ The server is hosted on [render](https://api-lendsqrmocky.onrender.com/data?page
 
 ## Data Storage
 User details on the Dashboard and User Details Page are stored using the Redux Persist module, which utilizes local storage for data persistence. This data is accessed and managed through the Redux state management module, ensuring that user information remains available across components. This approach guarantees seamless user experience and data continuity, aligning with best practices in state management for web applications.
+
+## Authentication and Authorization
+The application implements authentication to restrict access to protected pages:
+
+- **Authentication Flow:** Users must provide a valid email address and password on the Login page to access protected areas.
+- **Authorization:** Upon successful login, users are redirected to the Dashboard page. Incorrect credentials display an error message on the Login page.
+
+## Unit Testing
+A unit test was conducted on the Login page to verify successful user login functionality. The test was executed using the Jest testing framework, which is integrated into the project for automated testing purposes.
+The purpose of the unit test was to ensure that the login process functions correctly under different scenarios, including valid credentials, invalid credentials, and edge cases. The test focused on verifying the following aspects:
+
+- **Successful Login:** Testing login with valid credentials should result in successful authentication and navigation to the Dashboard page.
+- **Error Handling:** Testing login with invalid credentials should display an appropriate error message on the Login page without navigating away.
 
 ## Folder Structure
 The project structure is organized as follows:
