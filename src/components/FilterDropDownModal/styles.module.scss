@@ -48,7 +48,7 @@
 
     button {
       @apply text-sm font-semibold border w-full max-w-[6.125rem] h-[2.5rem];
-      @apply px-4 py-2 rounded-lg disabled:cursor-not-allowed disabled:opacity-40;      
+      @apply px-4 py-2 rounded-lg disabled:cursor-not-allowed disabled:opacity-40;
     }
 
     .resetBtn {
@@ -65,6 +65,6 @@
   }
 }
 
-// .filterDropdownWrapper.lastColumn {
-//   @apply left-[-6rem];
-// }
+.isFilter {
+  @apply top-[6.5rem];
+}

@@ -39,6 +39,7 @@ export interface DropdownModalProps {
   arrayLen: number;
   index: number;
   close?: () => void;
+  isFilter?: boolean;
 }
 
 export interface OptionModalProps {

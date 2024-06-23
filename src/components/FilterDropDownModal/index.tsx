@@ -12,6 +12,7 @@ export default function FilterDropDownModal({
   arrayLen,
   index,
   close,
+  isFilter,
 }: DropdownModalProps): JSX.Element {
   const userDataArr = useAppSelector((state) => state.userData.data);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -56,7 +57,7 @@ export default function FilterDropDownModal({
       onClick={handleModalClick}
       className={`${styles.filterDropdownWrapper} ${
         arrayLen - 1 === index ? styles.lastColumn : ""
-      }`}
+      } ${isFilter ? styles.isFilter : ""}`}
     >
       <form>
         <div className={styles.selectWrapper}>
