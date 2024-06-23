@@ -1,12 +1,9 @@
 {
-  "homepage": "https://victor-akoh-lendsqr-fe-test.github.io",
   "name": "lendsqr-fe-test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
     "test": "jest",
     "dev": "vite",
     "build": "tsc && vite build",
